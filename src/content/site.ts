@@ -193,7 +193,7 @@ export const site = {
 
   scarcity: {
     heading: "Start with a free bottleneck audit",
-    body: `Every build is custom and hands-on, so I take on a small number of clients at a time. If the work you repeat every week is holding you back, the place to start is a free bottleneck audit. We map exactly what could run without you. You leave with that map, no strings, whether or not we build it for you.`,
+    body: `Every build is custom and hands-on, so I take on a small number of clients at a time. If the work you repeat every week is holding you back, the place to start is a free bottleneck audit. We map exactly what could run without you.`,
   },
 
   faq: {
