@@ -21,7 +21,7 @@ export const site = {
   // The one action. Repeated verbatim at three scroll depths.
   cta: {
     label: "Get a free bottleneck audit",
-    micro: "You'd be surprised how much can run without you.",
+    micro: "Free, and you leave with a map either way.",
   },
 
   // Calendly inline embed target (spec section 7). Also used as the plain-link
@@ -31,21 +31,29 @@ export const site = {
   },
 
   hero: {
+    wordmark: "Seknd",
     eyebrow: "Custom systems, built and run for you",
-    headline: "The work that runs your week can run without you.",
+    // Headline is assembled in the Hero so "without you" can take Newsreader italic.
+    headlineBefore: "The work that runs your week can run ",
+    headlineEmphasis: "without you",
+    headlineAfter: ".",
     subhead:
       "Seknd designs a custom system around the work you repeat every week, deploys it, and keeps it running, so you get the output without the hours. You control it from your phone or computer through a simple interface. No code, no tech knowledge, and nothing to learn or migrate. You keep the tools you already use. We handle the rest, and we are here whenever you want to change or improve it.",
   },
 
   // Graphic 1 stages, left to right (plain-English labels, spec section 6).
   pipeline: {
+    caption: "Each task, end to end",
     ariaLabel:
       "A single task flows through five stages and completes: find, then research, then personalize, then send, then follow up.",
     stages: ["Find", "Research", "Personalize", "Send", "Follow up"],
   },
 
   shift: {
-    heading: "You didn't start this to spend your evenings on admin",
+    // Heading is assembled in Shift so "less" can take Newsreader italic.
+    headingBefore: "You didn't start your business to spend ",
+    headingEmphasis: "less",
+    headingAfter: " time with your family.",
     body: `You didn't start this business to spend your evenings on admin. You are good at the actual work, the part you started this to do, and you probably still love it. But the further you get, the more of your week disappears into the parts that just have to get done: the follow-ups, the invoicing, the inbox, the same information moved from one place to another again and again. And when you try to hand it off, you often just trade one time sink for another, because now you are hiring, training, and managing people to do work that should not need a person babysitting it. Either way, the week fills up and you are still the bottleneck. Every hour spent there is an hour not spent on the work that actually grows the business, or on the life you meant to have outside it.`,
   },
 
@@ -96,7 +104,7 @@ export const site = {
 
   whatChanges: {
     heading: "What changes for you",
-    body: `This is the difference. On the left, the week you have now: every recurring task is a block you personally have to fill. On the right, the same week with those blocks handled for you, and the hours they took given back to the work that grows the business and the life you actually want.`,
+    body: `This is the difference. Your week now: every recurring task is a block you personally have to fill. Your week with Seknd: those blocks are handled for you, and the hours they took are given back to the work that grows the business and the life you actually want.`,
     // Graphic 2 content.
     now: {
       label: "Your week now",

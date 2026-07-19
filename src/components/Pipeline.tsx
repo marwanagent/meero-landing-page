@@ -5,16 +5,13 @@ import { site } from "@/content/site";
  * thing on the page; everything else stays quiet.
  *
  * One token calmly completes a five-step journey, then the finished pipeline
- * rests. Built as CSS keyframes over inline SVG (see globals.css). No JS, no
- * library, nothing that blocks first paint. The default (and reduced-motion,
- * and no-CSS-animation) state is the fully completed pipeline, held static.
- *
- * On mobile the connector line and token are hidden and the stages wrap into
- * a simple grid.
+ * rests. Built as CSS keyframes (see globals.css). No JS, no library.
+ * On mobile the stages stay in one calm horizontal row (smaller type); the
+ * connector and token remain desktop-only.
  */
 function Check() {
   return (
-    <svg viewBox="0 0 24 24" className="h-5 w-5" fill="none" aria-hidden="true">
+    <svg viewBox="0 0 24 24" className="h-4 w-4 sm:h-5 sm:w-5" fill="none" aria-hidden="true">
       <path
         d="M5 12.5l4 4L19 7"
         stroke="currentColor"
@@ -33,8 +30,12 @@ export function Pipeline() {
     <figure
       role="img"
       aria-label={site.pipeline.ariaLabel}
-      className="relative w-full rounded-xl border border-hairline bg-card px-6 py-10 sm:px-10 sm:py-12"
+      className="relative w-full rounded-xl border border-hairline bg-card px-4 py-8 sm:px-10 sm:py-14"
     >
+      <figcaption className="mb-8 text-center text-xs font-medium uppercase tracking-[0.16em] text-muted">
+        {site.pipeline.caption}
+      </figcaption>
+
       <div className="relative">
         {/* Connector line: only on >= sm, where the stages sit in one row.
             Spans exactly from the first node center (10%) to the last (90%). */}
@@ -51,19 +52,21 @@ export function Pipeline() {
           />
         </div>
 
-        <ul className="grid grid-cols-2 gap-y-8 gap-x-4 sm:grid-cols-5 sm:gap-0">
+        <ul className="grid grid-cols-5 gap-1 sm:gap-0">
           {stages.map((label, i) => {
             const n = i + 1;
             return (
-              <li key={label} className="flex flex-col items-center">
+              <li key={label} className="flex min-w-0 flex-col items-center">
                 <span
-                  className={`pipe-dot pipe-dot-${n} relative z-10 flex h-11 w-11 items-center justify-center rounded-full border bg-card text-ink`}
+                  className={`pipe-dot pipe-dot-${n} relative z-10 flex h-9 w-9 items-center justify-center rounded-full border bg-card text-ink sm:h-11 sm:w-11`}
                 >
                   <span className={`pipe-check pipe-check-${n} inline-flex`}>
                     <Check />
                   </span>
                 </span>
-                <span className="mt-3 text-sm font-medium text-ink">{label}</span>
+                <span className="mt-2 text-center text-[0.65rem] font-medium leading-tight text-ink sm:mt-3 sm:text-sm">
+                  {label}
+                </span>
               </li>
             );
           })}

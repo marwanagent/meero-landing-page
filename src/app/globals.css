@@ -29,6 +29,21 @@ body {
   text-rendering: optimizeLegibility;
 }
 
+/*
+  Quiet paper atmosphere for the hero only (spec 5: no SaaS gradient blobs).
+  A near-invisible top lift into a slightly cooler paper, then settling back
+  to the page paper. Contrast stays well under ~3% so it reads as depth, not
+  decoration.
+*/
+.hero-atmosphere {
+  background: linear-gradient(
+    180deg,
+    #f8f9fb 0%,
+    var(--color-paper) 42%,
+    var(--color-paper) 100%
+  );
+}
+
 /* Visible keyboard focus everywhere (quality floor, spec section 5). */
 :focus-visible {
   outline: 2px solid var(--color-ink);
