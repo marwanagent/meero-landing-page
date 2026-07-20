@@ -232,10 +232,6 @@ export const site = {
 
   footer: {
     wordmark: "Seknd",
-    // No email is given in the spec, and inventing one would violate the
-    // anti-fabrication rule. The honest single contact channel is the booking
-    // call itself, which is also the page's one action.
-    contact: "The best way to reach me is to book a call.",
     legalName: "Seknd",
   },
 } as const;

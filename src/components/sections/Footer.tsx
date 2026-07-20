@@ -3,9 +3,8 @@ import { Container } from "@/components/Container";
 import { Cta } from "@/components/Cta";
 
 /**
- * Footer (spec section 4). Minimal: wordmark, one line of contact, the primary
- * CTA one last time, legal. No secondary links that pull attention off the
- * single action.
+ * Footer (spec section 4). Minimal: wordmark, the primary CTA one last time,
+ * legal. No secondary links that pull attention off the single action.
  */
 export function Footer() {
   const year = new Date().getFullYear();
@@ -17,7 +16,6 @@ export function Footer() {
             <p className="font-serif text-2xl font-medium text-ink">
               {site.footer.wordmark}
             </p>
-            <p className="mt-3 max-w-[40ch] text-sm text-muted">{site.footer.contact}</p>
           </div>
           <Cta location="footer" />
         </div>

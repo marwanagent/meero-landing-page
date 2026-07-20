@@ -29,9 +29,9 @@ export function Cta({
       >
         {site.cta.label}
       </a>
-      <p className="text-sm text-muted">
-        {location === "hero" ? site.cta.heroMicro : site.cta.micro}
-      </p>
+      {location === "hero" ? (
+        <p className="text-sm text-muted">{site.cta.heroMicro}</p>
+      ) : null}
     </div>
   );
 }
