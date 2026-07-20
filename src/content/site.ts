@@ -22,6 +22,7 @@ export const site = {
   cta: {
     label: "Get a free bottleneck audit",
     micro: "Free, and you leave with a map either way.",
+    heroMicro: "Walk a way with a map breaking down under-used leverage",
   },
 
   // Calendly inline embed target (spec section 7). Also used as the plain-link
@@ -38,7 +39,7 @@ export const site = {
     headlineEmphasis: "without you",
     headlineAfter: ".",
     subhead:
-      "Seknd designs a custom system around the work you repeat every week, deploys it, and keeps it running, so you get the output without the hours. You control it from your phone or computer through a simple interface. No code, no tech knowledge, and nothing to learn or migrate. You keep the tools you already use. We handle the rest, and we are here whenever you want to change or improve it.",
+      "Seknd designs a custom system around the work you repeat every week, deploys it, and keeps it running, so you get the output without the hours. You control it from your phone or computer through a simple interface. No code, no tech knowledge, and nothing to learn or migrate. You keep the tools you already use. All you need is a phone, and a computer only if you want one.",
   },
 
   // Graphic 1 stages, left to right (plain-English labels, spec section 6).
@@ -54,23 +55,27 @@ export const site = {
     headingBefore: "You didn't start your business to spend ",
     headingEmphasis: "less",
     headingAfter: " time with your family.",
-    body: `You didn't start this business to spend your evenings on admin. You are good at the actual work, the part you started this to do, and you probably still love it. But the further you get, the more of your week disappears into the parts that just have to get done: the follow-ups, the invoicing, the inbox, the same information moved from one place to another again and again. And when you try to hand it off, you often just trade one time sink for another, because now you are hiring, training, and managing people to do work that should not need a person babysitting it. Either way, the week fills up and you are still the bottleneck. Every hour spent there is an hour not spent on the work that actually grows the business, or on the life you meant to have outside it.`,
+    body: [
+      "I didn't start any of my businesses to spend every day on admin, outreach, and the repetitive tasks I knew were necessary but that never left any time for my wife. I knew I needed leverage, or my revenue was going to stay capped at whatever I could make in the hours of a day.",
+      "You started a business to get out from under that ceiling, not to rebuild it by hand. Hiring looks like the way out, but when you try to hand the work off you just trade one time sink for another: now you're recruiting, training, and managing someone to do work that shouldn't need a person watching it. Either way the week fills up, and you're still the bottleneck.",
+      "That's the exact reason I started building these systems for myself. Every hour I stopped spending there went back to the work that actually grows the business, and to the life meant to be had outside it.",
+    ],
   },
 
   howItWorks: {
     heading: "How it works",
     steps: [
       {
-        title: "We find your bottleneck.",
-        body: "On a free call, we map the work you repeat every week and pinpoint what could run without you. You leave with that map whether or not we work together.",
+        title: "I find your bottleneck.",
+        body: "On a free call, I map the work you repeat every week and pinpoint what could run without you. I only suggest a build if I can see it moving your business forward or giving you real time back. If I can't, I'll tell you. Either way, you leave with that map, whether or not we work together.",
       },
       {
-        title: "We build it around your business.",
-        body: "We design a custom system for your exact workflow, deploy it, and hand it over working. You do not build anything, learn anything, or move off the tools you already use.",
+        title: "I build it around your business.",
+        body: "If I can see a build that moves the needle, I design a custom system for your exact workflow and wire it into the tools you already use. I deploy it and hand it over working. You don't build anything, learn any code, or switch platforms.",
       },
       {
         title: "It runs, and you stay in control.",
-        body: "It runs on its own on a schedule. You watch and control it from a simple interface on your phone or computer. When you want to change or improve it as you learn what works, we are right there.",
+        body: "It runs on its own on a schedule. You watch and control it from a simple interface on your phone or computer. When you want to change or improve it as you learn what works, I'm right there.",
       },
     ],
   },
@@ -104,7 +109,6 @@ export const site = {
 
   whatChanges: {
     heading: "What changes for you",
-    body: `This is the difference. Your week now: every recurring task is a block you personally have to fill. Your week with Seknd: those blocks are handled for you, and the hours they took are given back to the work that grows the business and the life you actually want.`,
     // Graphic 2 content.
     now: {
       label: "Your week now",
@@ -136,7 +140,7 @@ export const site = {
     heading: "Proof",
     lead: "The research and outreach system I built for my own business took me from almost no outreach, because I never had the time for it, to 6 to 10 booked calls a month and a 10K close within the first month.",
     supporting:
-      "The cold outreach my system sends gets replies at roughly 3x the national average.",
+      "The cold outreach system I built for myself gets replies at roughly 6x the national average.",
     quote: {
       text: "I used to lose hours every week researching opportunities for my work. Now that time is basically zero, and every week I get a clear list of the highest-leverage moves to make, including ones I never would have found on my own.",
       attribution: "T. Chavez",

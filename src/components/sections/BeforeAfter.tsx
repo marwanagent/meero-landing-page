@@ -8,7 +8,7 @@ import { Cta } from "@/components/Cta";
  * clear divider and label. Each panel carries a text alternative.
  */
 export function BeforeAfter() {
-  const { heading, body, now, after } = site.whatChanges;
+  const { heading, now, after } = site.whatChanges;
 
   return (
     <section className="border-t border-hairline py-20 sm:py-28">
@@ -16,9 +16,6 @@ export function BeforeAfter() {
         <h2 className="font-serif text-[clamp(1.75rem,3vw+0.5rem,2.75rem)] font-medium leading-[1.12] tracking-[-0.01em] text-ink">
           {heading}
         </h2>
-        <p className="mt-6 max-w-[60ch] text-[1.125rem] leading-relaxed text-muted">
-          {body}
-        </p>
 
         <div className="mt-12 grid gap-px overflow-hidden rounded-xl border border-hairline bg-hairline md:grid-cols-2">
           {/* Now: crowded */}

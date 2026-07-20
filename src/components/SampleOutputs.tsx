@@ -3,8 +3,9 @@ import { site } from "@/content/site";
 /**
  * Graphic 3: illustrative sample outputs (spec section 6). Every mock is
  * captioned "Illustrative example" and its content is invented, so it never
- * claims to be real client data. Used light (one mock) in the examples section
- * and full (three mocks) in the proof section.
+ * claims to be real client data. Used light (outreach) in the examples section
+ * and full (brief + invoice) in the proof section. Outreach is not repeated in
+ * proof because it already appears beside "What we've built".
  */
 const s = site.samples;
 
@@ -104,8 +105,7 @@ export function SampleOutputs({ variant }: { variant: "light" | "full" }) {
     );
   }
   return (
-    <div className="grid gap-6 md:grid-cols-3">
-      <OutreachMock />
+    <div className="grid gap-6 md:grid-cols-2">
       <BriefMock />
       <InvoiceMock />
     </div>

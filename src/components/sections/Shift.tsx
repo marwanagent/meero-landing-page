@@ -13,9 +13,11 @@ export function Shift() {
           <em className="font-medium italic">{headingEmphasis}</em>
           {headingAfter}
         </h2>
-        <p className="mt-8 max-w-[60ch] text-[1.125rem] leading-relaxed text-muted">
-          {body}
-        </p>
+        <div className="mt-8 max-w-[60ch] space-y-5 text-[1.125rem] leading-relaxed text-muted">
+          {body.map((paragraph, index) => (
+            <p key={index}>{paragraph}</p>
+          ))}
+        </div>
       </Container>
     </section>
   );
