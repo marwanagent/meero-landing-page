@@ -12,15 +12,13 @@ export function Footer() {
     <footer className="border-t border-hairline py-16">
       <Container>
         <div className="flex flex-col gap-10 md:flex-row md:items-end md:justify-between">
-          <div>
-            <p className="font-serif text-2xl font-medium text-ink">
-              {site.footer.wordmark}
-            </p>
-          </div>
+          <p className="font-serif text-2xl tracking-[-0.03em] text-ink">
+            {site.brand.wordmark}
+          </p>
           <Cta location="footer" />
         </div>
         <p className="mt-12 text-xs text-muted">
-          &copy; {year} {site.footer.legalName}. All rights reserved.
+          &copy; {year} {site.brand.legalName}. All rights reserved.
         </p>
       </Container>
     </footer>

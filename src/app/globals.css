@@ -6,15 +6,15 @@
   Tailwind v4 turns each token into utilities, e.g. `--color-ink` -> bg-ink / text-ink / border-ink.
 */
 @theme {
-  --color-ink: #17203a; /* primary text, structure, CTA fill */
-  --color-paper: #f4f5f7; /* page background */
-  --color-accent: #d99a4e; /* warm accent, CTA underline ONLY */
-  --color-muted: #47506a; /* body text */
-  --color-card: #ffffff; /* card / stage background */
-  --color-hairline: #dce0e8; /* thin borders and dividers */
+  --color-ink: #18181b; /* primary text, structure, CTA fill */
+  --color-paper: #fcfcfc; /* page background */
+  --color-accent: #82b1f0; /* CTA underline and focus glow ONLY */
+  --color-muted: #71717a; /* body text */
+  --color-card: #ffffff; /* card background */
+  --color-hairline: #e5e5e5; /* thin borders and dividers */
 
-  --font-serif: var(--font-newsreader), ui-serif, Georgia, Cambria, "Times New Roman", serif;
-  --font-sans: var(--font-inter), ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
+  --font-serif: var(--font-display), ui-serif, Georgia, Cambria, "Times New Roman", serif;
+  --font-sans: var(--font-body), ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
 }
 
 html {
@@ -30,7 +30,7 @@ body {
 }
 
 /*
-  Quiet paper atmosphere for the hero only (spec 5: no SaaS gradient blobs).
+  Quiet paper atmosphere for the hero only (spec 5: no gradient blobs).
   A near-invisible top lift into a slightly cooler paper, then settling back
   to the page paper. Contrast stays well under ~3% so it reads as depth, not
   decoration.
@@ -38,10 +38,37 @@ body {
 .hero-atmosphere {
   background: linear-gradient(
     180deg,
-    #f8f9fb 0%,
+    #f6f7fa 0%,
     var(--color-paper) 42%,
     var(--color-paper) 100%
   );
+}
+
+/*
+  Sticky header: translucent paper with a blur so copy stays legible as it
+  passes underneath. Falls back to solid paper where backdrop-filter is
+  unsupported, which keeps the header readable rather than see-through.
+*/
+.site-header {
+  background-color: var(--color-paper);
+}
+
+@supports (backdrop-filter: blur(12px)) {
+  .site-header {
+    background-color: rgba(252, 252, 252, 0.72);
+    backdrop-filter: blur(12px);
+  }
+}
+
+/*
+  Card elevation: one close shadow for the edge and one wide ambient shadow for
+  the lift, both tinted blue-gray rather than black so they read as light in a
+  room instead of a drop shadow.
+*/
+.card-raised {
+  box-shadow:
+    0 1px 3px rgba(41, 39, 34, 0.06),
+    0 18px 44px rgba(70, 91, 124, 0.09);
 }
 
 /* Visible keyboard focus everywhere (quality floor, spec section 5). */
@@ -62,25 +89,25 @@ body {
 /*                                                                    */
 /*  Hover/focus are COLOR-only: no size or scale change (spec 5 says  */
 /*  restraint, not a pop). On hover the ink deepens slightly and the  */
-/*  warm accent underline shifts a touch warmer/deeper. Transition is */
-/*  ~180ms ease and covers only the animated color properties.        */
+/*  accent underline shifts a touch deeper. Transition is ~180ms ease */
+/*  and covers only the animated color properties.                    */
 /*                                                                    */
 /*  Focus is a first-class, keyboard-visible state (not hover-only):  */
-/*  the button is a real anchor, reachable by Tab, and gets a solid   */
-/*  ink outline ring. Ink (#17203A) against the paper (#F4F5F7) or    */
+/*  the button is a real anchor, reachable by Tab, and gets a soft    */
+/*  accent glow ring. Ink (#18181B) against the paper (#FCFCFC) or    */
 /*  card (#FFFFFF) it sits on clears WCAG AA non-text contrast (3:1)  */
-/*  with a wide margin. Focus also adopts the hover color treatment,  */
-/*  so hover and focus read as one intentional, consistent design.    */
+/*  with a wide margin.                                               */
 /* ------------------------------------------------------------------ */
 .cta-button {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  border-radius: 0.375rem;
+  border-radius: 0.625rem;
   padding: 1rem 1.75rem;
   font-size: 1rem;
   line-height: 1.5rem;
   font-weight: 500;
+  letter-spacing: -0.01em;
   color: var(--color-paper);
   background-color: var(--color-ink);
   box-shadow: 0 3px 0 0 var(--color-accent);
@@ -90,145 +117,39 @@ body {
 }
 
 .cta-button:hover {
-  background-color: #0f1626; /* ink, deepened slightly */
-  box-shadow: 0 3px 0 0 #bd8036; /* warm accent, shifted a touch deeper */
+  background-color: #000000; /* ink, deepened slightly */
+  box-shadow: 0 3px 0 0 #5f95dd; /* accent, shifted a touch deeper */
 }
 
 .cta-button:focus-visible {
-  background-color: #0f1626;
-  box-shadow: 0 3px 0 0 #bd8036;
-  outline: 2px solid var(--color-ink);
-  outline-offset: 4px;
+  background-color: #000000;
+  box-shadow:
+    0 3px 0 0 #5f95dd,
+    0 0 0 4px rgba(83, 136, 236, 0.24);
+  outline: none;
+}
+
+/* Compact variant for the sticky header. */
+.cta-button-compact {
+  padding: 0.5rem 1rem;
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+  border-radius: 0.5rem;
+  box-shadow: 0 2px 0 0 var(--color-accent);
+}
+
+.cta-button-compact:hover {
+  box-shadow: 0 2px 0 0 #5f95dd;
+}
+
+.cta-button-compact:focus-visible {
+  box-shadow:
+    0 2px 0 0 #5f95dd,
+    0 0 0 4px rgba(83, 136, 236, 0.24);
 }
 
 @media (prefers-reduced-motion: reduce) {
   .cta-button {
     transition: none;
   }
-}
-
-/* ------------------------------------------------------------------ */
-/*  Graphic 1: the animated pipeline (spec section 6).                */
-/*                                                                    */
-/*  Default state = the COMPLETED pipeline, held static: all five     */
-/*  checkmarks present, connector fully drawn, no token. This is the  */
-/*  reduced-motion state AND the no-JS / animation-unsupported state, */
-/*  so the graphic is never broken or empty.                          */
-/*                                                                    */
-/*  Motion is layered on ONLY under prefers-reduced-motion:           */
-/*  no-preference. Timeline: 8s cycle = ~6s calm traverse + ~2s rest  */
-/*  holding the finished pipeline, then repeat. Ease-in-out.          */
-/*  One token, once per cycle. This is the only animation on the page.*/
-/* ------------------------------------------------------------------ */
-
-.pipe-connector-fill {
-  transform: scaleX(1); /* completed by default */
-  transform-origin: left center;
-}
-
-.pipe-check {
-  opacity: 1; /* completed by default */
-  transform: scale(1);
-}
-
-.pipe-token {
-  opacity: 0; /* no token in the static/completed state */
-}
-
-.pipe-dot {
-  border-color: rgba(23, 32, 58, 0.55); /* firmed-up by default */
-  background-color: rgba(23, 32, 58, 0.04);
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .pipe-connector-fill {
-    animation: pipe-connector-grow 8s ease-in-out infinite;
-  }
-  .pipe-token {
-    animation: pipe-token-travel 8s ease-in-out infinite;
-  }
-
-  /* Node arrival points across the 6s traverse (0 / 18.75 / 37.5 / 56.25 / 75 %). */
-  .pipe-check-1 { animation: pipe-check-1 8s ease-in-out infinite; }
-  .pipe-check-2 { animation: pipe-check-2 8s ease-in-out infinite; }
-  .pipe-check-3 { animation: pipe-check-3 8s ease-in-out infinite; }
-  .pipe-check-4 { animation: pipe-check-4 8s ease-in-out infinite; }
-  .pipe-check-5 { animation: pipe-check-5 8s ease-in-out infinite; }
-
-  .pipe-dot-1 { animation: pipe-dot-1 8s ease-in-out infinite; }
-  .pipe-dot-2 { animation: pipe-dot-2 8s ease-in-out infinite; }
-  .pipe-dot-3 { animation: pipe-dot-3 8s ease-in-out infinite; }
-  .pipe-dot-4 { animation: pipe-dot-4 8s ease-in-out infinite; }
-  .pipe-dot-5 { animation: pipe-dot-5 8s ease-in-out infinite; }
-}
-
-/* Token: fades in at the first stage, rolls left to right, fades out as it
-   lands on the last stage. The completed checkmarks hold through the rest. */
-@keyframes pipe-token-travel {
-  0%   { left: 0%;   opacity: 0; }
-  4%   { opacity: 1; }
-  70%  { left: 100%; opacity: 1; }
-  75%  { left: 100%; opacity: 0; }
-  100% { left: 100%; opacity: 0; }
-}
-
-/* Connector hairline draws in left to right, in step with the token. */
-@keyframes pipe-connector-grow {
-  0%   { transform: scaleX(0); }
-  75%  { transform: scaleX(1); }
-  100% { transform: scaleX(1); }
-}
-
-/* Checkmarks: gentle fade + scale-in (~240ms) as the token arrives, then hold. */
-@keyframes pipe-check-1 {
-  0%   { opacity: 0; transform: scale(0.6); }
-  3%   { opacity: 1; transform: scale(1); }
-  100% { opacity: 1; transform: scale(1); }
-}
-@keyframes pipe-check-2 {
-  0%, 18.75% { opacity: 0; transform: scale(0.6); }
-  21.75%     { opacity: 1; transform: scale(1); }
-  100%       { opacity: 1; transform: scale(1); }
-}
-@keyframes pipe-check-3 {
-  0%, 37.5% { opacity: 0; transform: scale(0.6); }
-  40.5%     { opacity: 1; transform: scale(1); }
-  100%      { opacity: 1; transform: scale(1); }
-}
-@keyframes pipe-check-4 {
-  0%, 56.25% { opacity: 0; transform: scale(0.6); }
-  59.25%     { opacity: 1; transform: scale(1); }
-  100%       { opacity: 1; transform: scale(1); }
-}
-@keyframes pipe-check-5 {
-  0%, 75% { opacity: 0; transform: scale(0.6); }
-  78%     { opacity: 1; transform: scale(1); }
-  100%    { opacity: 1; transform: scale(1); }
-}
-
-/* Dots: hairline border firms up to ink as each stage completes. No color flash. */
-@keyframes pipe-dot-1 {
-  0%   { border-color: var(--color-hairline); background-color: #fff; }
-  3%   { border-color: rgba(23, 32, 58, 0.55); background-color: rgba(23, 32, 58, 0.04); }
-  100% { border-color: rgba(23, 32, 58, 0.55); background-color: rgba(23, 32, 58, 0.04); }
-}
-@keyframes pipe-dot-2 {
-  0%, 18.75% { border-color: var(--color-hairline); background-color: #fff; }
-  21.75%     { border-color: rgba(23, 32, 58, 0.55); background-color: rgba(23, 32, 58, 0.04); }
-  100%       { border-color: rgba(23, 32, 58, 0.55); background-color: rgba(23, 32, 58, 0.04); }
-}
-@keyframes pipe-dot-3 {
-  0%, 37.5% { border-color: var(--color-hairline); background-color: #fff; }
-  40.5%     { border-color: rgba(23, 32, 58, 0.55); background-color: rgba(23, 32, 58, 0.04); }
-  100%      { border-color: rgba(23, 32, 58, 0.55); background-color: rgba(23, 32, 58, 0.04); }
-}
-@keyframes pipe-dot-4 {
-  0%, 56.25% { border-color: var(--color-hairline); background-color: #fff; }
-  59.25%     { border-color: rgba(23, 32, 58, 0.55); background-color: rgba(23, 32, 58, 0.04); }
-  100%       { border-color: rgba(23, 32, 58, 0.55); background-color: rgba(23, 32, 58, 0.04); }
-}
-@keyframes pipe-dot-5 {
-  0%, 75% { border-color: var(--color-hairline); background-color: #fff; }
-  78%     { border-color: rgba(23, 32, 58, 0.55); background-color: rgba(23, 32, 58, 0.04); }
-  100%    { border-color: rgba(23, 32, 58, 0.55); background-color: rgba(23, 32, 58, 0.04); }
 }

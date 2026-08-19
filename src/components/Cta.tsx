@@ -7,7 +7,7 @@ import { track, ANALYTICS_EVENTS } from "@/lib/analytics";
  * The single call to action, reused verbatim at three scroll depths (hero,
  * mid-page, bottom). It is a real anchor to the booking embed (#book), so it
  * works with JavaScript disabled and always leads somewhere (spec section 9).
- * The warm accent appears here and nowhere else, as the CTA underline.
+ * The accent appears here and nowhere else, as the CTA underline.
  */
 export function Cta({
   className = "",
@@ -29,9 +29,24 @@ export function Cta({
       >
         {site.cta.label}
       </a>
-      {location === "hero" ? (
-        <p className="text-sm text-muted">{site.cta.heroMicro}</p>
-      ) : null}
+      <p className="text-sm text-muted">{site.cta.micro}</p>
     </div>
+  );
+}
+
+/**
+ * Compact header variant: the same action and the same destination, sized for
+ * the sticky bar. This is navigation rather than one of the three CTA blocks,
+ * so it deliberately carries no micro-line.
+ */
+export function CtaCompact() {
+  return (
+    <a
+      href="#book"
+      onClick={() => track(ANALYTICS_EVENTS.ctaClick, { location: "header" })}
+      className="cta-button cta-button-compact"
+    >
+      {site.cta.label}
+    </a>
   );
 }

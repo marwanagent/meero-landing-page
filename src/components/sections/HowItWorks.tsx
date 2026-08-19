@@ -6,7 +6,7 @@ export function HowItWorks() {
   return (
     <section className="border-t border-hairline py-20 sm:py-28">
       <Container>
-        <h2 className="font-serif text-[clamp(1.75rem,3vw+0.5rem,2.75rem)] font-medium leading-[1.12] tracking-[-0.01em] text-ink">
+        <h2 className="font-serif text-[clamp(2rem,3.5vw+0.5rem,3rem)] font-normal leading-[1.06] tracking-[-0.035em] text-ink">
           {site.howItWorks.heading}
         </h2>
         <ol className="mt-12 grid gap-10 md:grid-cols-3 md:gap-8">
@@ -14,7 +14,7 @@ export function HowItWorks() {
             <li key={step.title} className="flex flex-col">
               <span
                 aria-hidden="true"
-                className="font-serif text-4xl font-medium text-ink/25"
+                className="font-serif text-4xl text-ink/25"
               >
                 {i + 1}
               </span>

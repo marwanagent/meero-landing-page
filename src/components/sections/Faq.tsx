@@ -9,7 +9,7 @@ export function Faq() {
   return (
     <section className="border-t border-hairline py-20 sm:py-28">
       <Container>
-        <h2 className="font-serif text-[clamp(1.75rem,3vw+0.5rem,2.75rem)] font-medium leading-[1.12] tracking-[-0.01em] text-ink">
+        <h2 className="font-serif text-[clamp(2rem,3.5vw+0.5rem,3rem)] font-normal leading-[1.06] tracking-[-0.035em] text-ink">
           {site.faq.heading}
         </h2>
         <dl className="mt-10 divide-y divide-hairline border-t border-hairline">

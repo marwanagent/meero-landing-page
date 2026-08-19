@@ -111,10 +111,8 @@ export function CalendlyEmbed() {
   return (
     <div>
       {status === "failed" ? (
-        <div className="flex min-h-[280px] flex-col items-center justify-center gap-4 rounded-lg border border-hairline bg-card px-6 py-10 text-center">
-          <p className="text-muted">
-            The calendar did not load. You can still book your audit here.
-          </p>
+        <div className="card-raised flex min-h-[280px] flex-col items-center justify-center gap-4 rounded-2xl bg-card px-6 py-10 text-center">
+          <p className="text-muted">{site.booking.failed}</p>
           <a
             href={site.calendly.url}
             target="_blank"
@@ -129,7 +127,7 @@ export function CalendlyEmbed() {
         <div className="relative">
           {status === "loading" && (
             <p className="absolute inset-x-0 top-1/2 -translate-y-1/2 text-center text-sm text-muted">
-              Loading the calendar…
+              {site.booking.loading}
             </p>
           )}
           {/*
@@ -142,15 +140,15 @@ export function CalendlyEmbed() {
           */}
           <div
             ref={parentRef}
-            className="rounded-lg"
+            className="rounded-2xl"
             style={{ minWidth: "280px", height: "700px" }}
-            aria-label="Booking calendar for a free bottleneck audit"
+            aria-label={site.booking.calendarLabel}
           />
         </div>
       )}
 
       <p className="mt-4 text-center text-sm text-muted">
-        Trouble with the calendar?{" "}
+        {site.booking.troublePrefix}{" "}
         <a
           href={site.calendly.url}
           target="_blank"
@@ -158,7 +156,7 @@ export function CalendlyEmbed() {
           onClick={() => track(ANALYTICS_EVENTS.ctaClick, { location: "embed-plain-link" })}
           className="font-medium text-ink underline decoration-2 underline-offset-4"
         >
-          Open the booking page directly
+          {site.booking.troubleLink}
         </a>
         .
       </p>
@@ -166,7 +164,7 @@ export function CalendlyEmbed() {
       <noscript>
         <p className="mt-4 text-center text-sm text-muted">
           <a href={site.calendly.url} className="font-medium text-ink underline">
-            Open the booking page to schedule your free bottleneck audit
+            {site.booking.noscript}
           </a>
           .
         </p>

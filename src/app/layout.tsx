@@ -1,25 +1,26 @@
 import type { Metadata } from "next";
-import { Newsreader, Inter } from "next/font/google";
+import { Instrument_Serif, DM_Sans } from "next/font/google";
 import "./globals.css";
 import { site } from "@/content/site";
 
-// Display face: editorial serif at weight 500 (spec section 5).
-const newsreader = Newsreader({
-  variable: "--font-newsreader",
+// Display face: editorial serif, set tight (spec section 5).
+const instrumentSerif = Instrument_Serif({
+  variable: "--font-display",
   subsets: ["latin"],
-  weight: ["500"],
+  weight: ["400"],
   style: ["normal", "italic"],
   display: "swap",
 });
 
 // Body face.
-const inter = Inter({
-  variable: "--font-inter",
+const dmSans = DM_Sans({
+  variable: "--font-body",
   subsets: ["latin"],
   display: "swap",
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://himeeroo.com"),
   title: site.meta.title,
   description: site.meta.description,
   openGraph: {
@@ -38,7 +39,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${newsreader.variable} ${inter.variable} h-full antialiased`}
+      className={`${instrumentSerif.variable} ${dmSans.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col bg-paper text-ink">{children}</body>
     </html>

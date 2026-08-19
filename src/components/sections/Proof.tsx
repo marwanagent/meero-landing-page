@@ -1,25 +1,47 @@
 import { site } from "@/content/site";
 import { Container } from "@/components/Container";
 import { SampleOutputs } from "@/components/SampleOutputs";
+import { Cta } from "@/components/Cta";
 
-/** Proof (spec section 4): lead with the verified outcome, then support. */
+/**
+ * Proof (spec section 4): lead with the verified outcome, then support it.
+ *
+ * This section also absorbs what used to be a separate "what we've built"
+ * section: the capability lines sit underneath the result they produced, so the
+ * page never reads as a product tour.
+ */
 export function Proof() {
-  const { heading, lead, supporting, quote, authority } = site.proof;
+  const { heading, lead, supporting, takenOffIntro, takenOff, quote, authority } = site.proof;
+
   return (
     <section className="border-t border-hairline py-20 sm:py-28">
       <Container>
-        <h2 className="font-serif text-[clamp(1.75rem,3vw+0.5rem,2.75rem)] font-medium leading-[1.12] tracking-[-0.01em] text-ink">
+        <h2 className="font-serif text-[clamp(2rem,3.5vw+0.5rem,3rem)] font-normal leading-[1.06] tracking-[-0.035em] text-ink">
           {heading}
         </h2>
 
-        <p className="mt-8 max-w-[52ch] font-serif text-[clamp(1.4rem,2.2vw+0.5rem,2rem)] font-medium leading-[1.25] text-ink">
+        <p className="mt-8 max-w-[52ch] font-serif text-[clamp(1.5rem,2.2vw+0.5rem,2.125rem)] font-normal leading-[1.15] tracking-[-0.03em] text-ink">
           {lead}
         </p>
         <p className="mt-6 max-w-[60ch] text-[1.125rem] leading-relaxed text-muted">
           {supporting}
         </p>
 
-        <figure className="mt-12 max-w-[60ch] border-l-2 border-ink/20 pl-6">
+        <p className="mt-10 text-xs font-medium uppercase tracking-[0.14em] text-muted">
+          {takenOffIntro}
+        </p>
+        <ul className="mt-5 grid gap-4 md:grid-cols-3">
+          {takenOff.map((item) => (
+            <li
+              key={item}
+              className="border-t border-ink/15 pt-4 text-base leading-relaxed text-muted"
+            >
+              {item}
+            </li>
+          ))}
+        </ul>
+
+        <figure className="mt-14 max-w-[60ch] border-l-2 border-accent pl-6">
           <blockquote className="text-lg leading-relaxed text-ink">
             {quote.text}
           </blockquote>
@@ -30,9 +52,12 @@ export function Proof() {
           {authority}
         </p>
 
-        <div className="mt-14">
-          <SampleOutputs variant="full" />
+        <div className="mt-12">
+          <SampleOutputs />
         </div>
+
+        {/* Mid-page CTA (spec section 4), previously carried by the cut section. */}
+        <Cta className="mt-14" align="center" location="mid-page" />
       </Container>
     </section>
   );
