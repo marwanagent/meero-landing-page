@@ -11,7 +11,8 @@ import { Cta } from "@/components/Cta";
  * page never reads as a product tour.
  */
 export function Proof() {
-  const { heading, lead, supporting, takenOffIntro, takenOff, quote, authority } = site.proof;
+  const { heading, lead, supporting, supportingDisclaimer, takenOffIntro, takenOff, quote, authority } =
+    site.proof;
 
   return (
     <section className="border-t border-hairline py-20 sm:py-28">
@@ -25,6 +26,9 @@ export function Proof() {
         </p>
         <p className="mt-6 max-w-[60ch] text-[1.125rem] leading-relaxed text-muted">
           {supporting}
+        </p>
+        <p className="mt-2 max-w-[60ch] text-sm leading-relaxed text-muted/70">
+          {supportingDisclaimer}
         </p>
 
         <p className="mt-10 text-xs font-medium uppercase tracking-[0.14em] text-muted">

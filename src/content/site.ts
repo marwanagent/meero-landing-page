@@ -27,7 +27,7 @@ export const site = {
 
   // The one action. Repeated verbatim at three scroll depths.
   cta: {
-    label: "Find your real bottleneck",
+    label: "Save me time",
     micro: "One call, leave with clear steps.",
   },
 
@@ -54,16 +54,16 @@ export const site = {
     headlineEmphasis: "without you",
     headlineAfter: ".",
     subhead:
-      "I look at how your business actually runs, find what is holding your time and your revenue down, and when it makes sense I build you a virtual assistant that takes that work over for good. It is not a person, and it is not an app you have to learn. You keep the tools you already use, and you run the whole thing from one screen on your phone.",
+      "I look at how your business actually runs, find what is holding your time and your revenue down, and when it makes sense I build you a virtual assistant that takes that work over for good. It is not a person, and it is not an app you have to learn. Most tasks that eat up your time on a regular basis, can probably be automated.",
   },
 
   shift: {
     // Heading is assembled in Shift so "smaller" can take the display italic.
-    headingBefore: "You did not start a business to buy yourself a ",
-    headingEmphasis: "smaller",
-    headingAfter: " life.",
+    headingBefore: "You did not quit your 9-5 so you can work ",
+    headingEmphasis: "24/7",
+    headingAfter: ".",
     body: [
-      "You run a business. You love what you do, and you're getting clients and making revenue, but it is not where you want it to be yet. Maybe you tried doing everything yourself at first, then you tried hiring, but you're still working too many hours to have time for the things that matter, and your revenue is still capped.",
+      "You run a business. You love what you do, and you're getting clients and making profit, but it is not where you want it to be yet. Maybe you tried doing everything yourself at first, then you tried hiring, but you're still working too many hours to have time for the things that matter, and your revenue is still capped.",
       "This is where I come in. One conversation, you leave with a clear idea of what's in the way of freeing your time and breaking your revenue ceiling. These are actionable things you can act on right away, whether on your own, or with a highly bespoke virtual assistant I build from scratch specifically for your business. You get something out of it whether we work together or not.",
     ],
   },
@@ -99,7 +99,7 @@ export const site = {
     steps: [
       {
         title: "I find what is really holding you back.",
-        body: "On one free call, I go through how your business actually runs week to week and pin down what is capping your time and your revenue. You leave with clear steps you can act on, whether or not you ever hire me.",
+        body: "On one free call, I go through how your business actually runs week to week and pin down what is capping your time and your revenue. You leave with clear steps you can act on, whether or not we build you something.",
       },
       {
         title: "I build it from scratch for your business.",
@@ -107,7 +107,7 @@ export const site = {
       },
       {
         title: "It works on its own, and you stay in charge.",
-        body: "It does its job on a set schedule. You can see what it did, and stop it or change it, from one screen on your phone. When your business changes, you tell me and I change it.",
+        body: "It does its job on a set schedule. You can see what it did, and stop it or change it from one screen on your phone. When your business changes, you tell me and I change it.",
       },
     ],
   },
@@ -116,7 +116,9 @@ export const site = {
     heading: "Proof",
     lead: "The research and outreach assistant I built for my own business took me from almost no outreach, because I never had the time for it, to 6 to 10 booked calls a month and a 10K close within the first month.",
     supporting:
-      "The outreach it sends gets replies at roughly 6x the national average.",
+      "The research and email list building is so good it gets an 18.6% reply rate.",
+    supportingDisclaimer:
+      "These are the numbers I got for my own business. A specific reply rate is not guaranteed for yours.",
     takenOffIntro: "Work it already handles for me, every week, without me:",
     takenOff: [
       "Finding the right people to contact, writing to each one personally, following up when there is no reply, and stopping the moment someone answers.",
@@ -128,7 +130,7 @@ export const site = {
       attribution: "T. Chavez",
     },
     authority:
-      "None of this is a script that quietly dies. It runs on machines that are watched every day. If a step fails, it tries again on its own, and if something ever goes quiet, I know before you do. That is the difference between something that looks good in a demo and something you can actually stop thinking about.",
+      "None of this is a script that quietly dies. It runs on machines that are watched every day. If a step fails, it tries again on its own, and if something ever goes quiet, I know the moment it does. That is the difference between something that looks good in a demo and something you can actually stop thinking about.",
   },
 
   // Illustrative sample outputs. All invented, privacy-safe.
@@ -163,7 +165,7 @@ export const site = {
 
   control: {
     heading: "You stay in charge, and it stays simple",
-    body: "Approve, pause, or change anything from one screen on your phone or computer. There is nothing to install and nothing to learn. If you can send a text, you can run this. And when you want it to work differently, you tell me and I handle it.",
+    body: "Approve, pause, or change anything from one screen on your phone or computer. If you can send a text, you can run this. And when you want it to work differently, you tell me and I handle it.",
   },
 
   scarcity: {
