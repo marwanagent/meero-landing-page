@@ -14,7 +14,7 @@ export function MessageThread({ thread }: { thread: MessageThreadData }) {
           </p>
         ))}
       </figcaption>
-      <div aria-hidden="true" className="message-panel">
+      <div aria-hidden="true" className="message-panel card-raised">
         {thread.messages.map((message, i) => (
           <div
             key={i}

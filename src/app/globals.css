@@ -18,7 +18,8 @@
   --color-muted: #62626b; /* body text */
   --color-card: #ffffff; /* card background */
   --color-message-blue: #176fba;
-  --color-message-panel: #edf2f5;
+  --color-message-panel: #dfe8ef;
+  --color-message-border: #c2ced8;
   --color-message-in: #ffffff;
   --color-hairline: #e5e5e5; /* thin borders and dividers */
 
@@ -205,8 +206,8 @@ body {
   display: flex;
   flex-direction: column;
   gap: 0.75rem;
-  padding: 1.25rem;
-  border: 1px solid var(--color-hairline);
+  padding: clamp(1.5rem, 3vw, 2rem);
+  border: 1px solid var(--color-message-border);
   border-radius: 1rem;
   background: var(--color-message-panel);
   min-height: 180px;

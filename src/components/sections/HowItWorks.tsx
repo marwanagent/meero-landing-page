@@ -11,9 +11,9 @@ export function HowItWorks() {
         <h2 className="font-serif text-[clamp(2rem,3.5vw+0.5rem,3rem)] font-normal leading-[1.06] tracking-[-0.035em] text-ink">
           {howItWorks.heading}
         </h2>
-        <ol role="list" className="mt-12 space-y-14 md:space-y-20">
+        <ol role="list" className="mt-12">
           {howItWorks.steps.map((step, i) => (
-            <li key={step.title} className="grid items-center gap-7 md:grid-cols-2 md:gap-16">
+            <li key={step.title} className="grid items-center gap-7 border-hairline py-7 first:pt-0 last:pb-0 not-first:border-t md:grid-cols-2 md:gap-16 md:py-10">
               <div className={i === 1 ? "min-w-0 md:col-start-2 md:row-start-1" : "min-w-0"}>
                 <span aria-hidden="true" className="inline-flex size-11 items-center justify-center rounded-full bg-ink font-serif text-2xl text-paper">
                   {i + 1}
@@ -21,7 +21,7 @@ export function HowItWorks() {
                 <h3 className="mt-5 font-serif text-3xl leading-tight text-ink">
                   {step.title}
                 </h3>
-                <p className="mt-4 max-w-[48ch] text-base leading-relaxed text-muted">
+                <p className="mt-4 max-w-[48ch] text-lg leading-relaxed text-muted">
                   {step.body}
                 </p>
               </div>
