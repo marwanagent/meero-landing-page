@@ -2,6 +2,7 @@ import { proof } from "@/content/home";
 import { Container } from "@/components/Container";
 import { TaskVisual } from "@/components/TaskVisual";
 import { Cta } from "@/components/Cta";
+import { FirstPartyResult } from "@/components/FirstPartyResult";
 
 /**
  * Proof (spec section 4): lead with the verified outcome, then support it.
@@ -13,9 +14,6 @@ import { Cta } from "@/components/Cta";
 export function Proof() {
   const {
     heading,
-    lead,
-    supporting,
-    supportingDisclaimer,
     takenOffIntro,
     takenOff,
     clientProofLabel,
@@ -29,13 +27,7 @@ export function Proof() {
           {heading}
         </h2>
 
-        <ul className="mt-8 list-disc space-y-4 pl-5 text-xl">
-          <li>{lead}</li>
-          <li>{supporting}</li>
-        </ul>
-        <p className="mt-2 max-w-[60ch] text-base leading-relaxed text-ink">
-          {supportingDisclaimer}
-        </p>
+        <FirstPartyResult />
 
         <p className="mt-10 text-lg font-semibold text-ink">
           {takenOffIntro}

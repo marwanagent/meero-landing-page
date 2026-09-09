@@ -78,6 +78,7 @@ export const howItWorks = {
 } as const;
 
 export const proof = {
+  resultLabel: "Marwan’s own business: Treehouse Music",
   heading: "Agents I've built",
   // Two distinct proof types, deliberately labelled and separated: Marwan's own
   // business results, then a client he built for. Merging them makes it unclear
