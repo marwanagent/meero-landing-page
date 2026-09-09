@@ -20,7 +20,7 @@ const dmSans = DM_Sans({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://himeeroo.com"),
+  metadataBase: new URL("https://getmeero.com"),
   title: site.meta.title,
   description: site.meta.description,
   openGraph: {

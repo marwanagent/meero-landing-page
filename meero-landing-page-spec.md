@@ -1,4 +1,4 @@
-# MEEROO Landing Page: Build Specification
+# MEERO Landing Page: Build Specification
 
 A build-ready spec for a single-page marketing site. This is the source of truth. Build against it.
 
@@ -59,7 +59,7 @@ Tone for all copy: warm, direct, human, plain verbs, sentence case, no filler, n
 
 ### Sticky header
 
-MEEROO wordmark on the left, compact CTA on the right, translucent paper with a blur behind it. The wordmark lives here rather than in the hero.
+MEERO wordmark on the left, compact CTA on the right, translucent paper with a blur behind it. The wordmark lives here rather than in the hero.
 
 ### Hero
 
@@ -111,7 +111,7 @@ Four questions, not six. Short, plain, confident answers: what work can come off
 
 ### Footer
 
-Minimal. MEEROO wordmark, the primary CTA one last time, any necessary legal. No secondary links that pull attention off the single action.
+Minimal. MEERO wordmark, the primary CTA one last time, any necessary legal. No secondary links that pull attention off the single action.
 
 ---
 
@@ -157,7 +157,7 @@ Two visuals, both built fresh and privacy-safe (they never expose real client da
 A small, playful card, not a full-width section. It sits beside the shift copy on large screens and stacks under it on small ones.
 
 - **Top ("Your week now"):** densely packed repeating task chips labeled in plain words ("Outreach," "Follow-ups," "Invoicing," "Inbox," "Admin"), visually crowded.
-- **Bottom ("Your week with MEEROO"):** the same chips greyed and struck through as handled, and the freed hours relabeled with what the owner wants there ("Vision," "Growth," "Family," "Off") as solid ink chips.
+- **Bottom ("Your week with MEERO"):** the same chips greyed and struck through as handled, and the freed hours relabeled with what the owner wants there ("Vision," "Growth," "Family," "Off") as solid ink chips.
 - Contrast immediate and visceral: crowded above, open below.
 - Accessible: each half carries a text alternative.
 
@@ -185,7 +185,7 @@ Realistic mocks of the output produced, written from scratch as examples: a mess
 
 **Structure:** single route (`/`), componentized by section (SiteHeader, Hero, Shift, HowItWorks, Proof, Control, Scarcity, FAQ, Footer). The CTA is one shared component reused at all three depths, pointing at the single Calendly URL from the content file.
 
-**Domain:** `himeeroo.com`, set as the production domain on the Vercel project, with the retired `getseknd.com` left in place as a redirect.
+**Domain:** `getmeero.com`, set as the production domain on the Vercel project, with the retired `getseknd.com` and `himeeroo.com` left in place as redirects.
 
 ---
 
@@ -217,7 +217,7 @@ Realistic mocks of the output produced, written from scratch as examples: a mess
 ## 10. Setup tasks outside the code (do not block the build)
 
 - **Calendly intake questions.** Add 2 to 3 questions on the booking event. Suggested: (1) What's your business and what does it do? (2) What recurring work eats the most of your week? (3) Roughly what's your annual revenue (optional, helps pre-qualify).
-- **Calendly event branding.** The event page still carries the old name and the `bottleneck-audit` slug. Rename it to match MEEROO. Changing the slug changes the URL, so update `site.calendly.url` in the same pass.
+- **Calendly event branding.** The event page still carries the old name and the `bottleneck-audit` slug. Rename it to match MEERO. Changing the slug changes the URL, so update `site.calendly.url` in the same pass.
 
 ---
 
