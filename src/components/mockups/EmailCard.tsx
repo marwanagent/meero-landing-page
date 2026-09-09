@@ -8,10 +8,7 @@ export function EmailCard({
 }) {
   return (
     <figure className="mock-figure">
-      <figcaption className="mock-caption">
-        {mockupCopy.label}
-        <span className="sr-only">. {mockupCopy.fiction}</span>
-      </figcaption>
+      <figcaption className="sr-only">{mockupCopy.fiction}</figcaption>
       <div className="email-window">
         {state === "sent" ? (
           <>

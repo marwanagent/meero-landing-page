@@ -2,8 +2,7 @@ import { mockupCopy, type MessageThreadData } from "@/content/mockups";
 export function MessageThread({ thread }: { thread: MessageThreadData }) {
   return (
     <figure className="mock-figure">
-      <figcaption className="mock-caption">{mockupCopy.label}</figcaption>
-      <div className="sr-only">
+      <figcaption className="sr-only">
         <p>{mockupCopy.fiction}</p>
         {thread.messages.map((message, i) => (
           <p key={i}>
@@ -14,7 +13,7 @@ export function MessageThread({ thread }: { thread: MessageThreadData }) {
             {message.direction === "out" ? mockupCopy.read : null}
           </p>
         ))}
-      </div>
+      </figcaption>
       <div aria-hidden="true" className="message-panel">
         {thread.messages.map((message, i) => (
           <div

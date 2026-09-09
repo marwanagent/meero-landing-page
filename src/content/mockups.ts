@@ -1,5 +1,4 @@
 export const mockupCopy = {
-  label: "Illustrative example",
   fiction: "Fictional correspondence for illustration.",
   to: "To",
   subject: "Subject",

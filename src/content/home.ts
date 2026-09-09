@@ -148,6 +148,4 @@ export const faq = {
 export const stack = {
   heading: "Works with what you already use.",
   body: "Nothing moves. Nothing gets replaced.",
-  disclaimer:
-    "Product names and logos are the property of their owners. Listing them does not imply any partnership or endorsement.",
 } as const;

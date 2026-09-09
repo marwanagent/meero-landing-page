@@ -2,10 +2,7 @@ import { INVOICE_MOCKUP as invoice, mockupCopy } from "@/content/mockups";
 export function InvoiceCard() {
   return (
     <figure className="mock-figure">
-      <figcaption className="mock-caption">
-        {mockupCopy.label}
-        <span className="sr-only">. {mockupCopy.invoiceAlt}</span>
-      </figcaption>
+      <figcaption className="sr-only">{mockupCopy.invoiceAlt}</figcaption>
       <div className="rounded-xl border border-hairline bg-card p-5">
         <div className="flex justify-between gap-3 text-sm text-muted">
           <h3>{invoice.kind}</h3>
