@@ -49,12 +49,16 @@ export const site = {
 
   hero: {
     eyebrow: "A virtual assistant built for your business alone",
-    // Headline is assembled in the Hero so "without you" can take the display italic.
-    headlineBefore: "The work that runs your week can run ",
-    headlineEmphasis: "without you",
+    // Headline is assembled in the Hero so "you" can take the display italic.
+    headlineBefore: "Clear the space to focus on the work that actually needs ",
+    headlineEmphasis: "you",
     headlineAfter: ".",
-    subhead:
-      "I look at how your business actually runs, find what is holding your time and your revenue down, and when it makes sense I build you a virtual assistant that takes that work over for good. It is not a person, and it is not an app you have to learn. Most tasks that eat up your time on a regular basis, can probably be automated.",
+    body: [
+      "I look at how your business runs, find what is eating your time and capping your revenue, and tell you straight whether it can be automated.",
+      "Outbound that goes out whether or not you had time for it that week. Inbound inquiries answered the moment they land. Invoices that send themselves. Ideal clients found without you spending hours on research. All of that can be handled by an AI agent I build for your business specifically, around your ICP, your offer, and where you are trying to take the business.",
+      "It is not a person you have to train, and it is not an app you have to learn. It runs on its own schedule and pings you when something needs your call.",
+    ],
+    ctaLead: "Want to see how much of your week you can get back? Start with one call.",
   },
 
   shift: {

@@ -8,7 +8,7 @@ import { Cta } from "@/components/Cta";
  * is deliberately no graphic here.
  */
 export function Hero() {
-  const { eyebrow, headlineBefore, headlineEmphasis, headlineAfter, subhead } = site.hero;
+  const { eyebrow, headlineBefore, headlineEmphasis, headlineAfter, body, ctaLead } = site.hero;
 
   return (
     <section id="top" className="hero-atmosphere relative pt-16 pb-20 sm:pt-24 sm:pb-28 lg:pt-28">
@@ -23,11 +23,15 @@ export function Hero() {
           {headlineAfter}
         </h1>
 
-        <p className="mt-7 max-w-[48ch] text-[1.125rem] leading-relaxed text-muted">
-          {subhead}
-        </p>
+        <div className="mt-7 max-w-[48ch] space-y-5 text-[1.125rem] leading-relaxed text-muted">
+          {body.map((paragraph, index) => (
+            <p key={index}>{paragraph}</p>
+          ))}
+        </div>
 
-        <Cta className="mt-9" location="hero" />
+        <p className="mt-7 max-w-[48ch] text-[1.125rem] leading-relaxed text-ink">{ctaLead}</p>
+
+        <Cta className="mt-5" location="hero" />
       </Container>
     </section>
   );
