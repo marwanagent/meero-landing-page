@@ -1,6 +1,9 @@
-import { site } from "@/content/site";
+import { proof } from "@/content/home";
 import { Container } from "@/components/Container";
-import { SampleOutputs } from "@/components/SampleOutputs";
+import { EmailCard } from "@/components/mockups/EmailCard";
+import { InvoiceCard } from "@/components/mockups/InvoiceCard";
+import { MessageThread } from "@/components/mockups/MessageThread";
+import { EMAIL_MOCKUPS, MESSAGE_THREADS } from "@/content/mockups";
 import { Cta } from "@/components/Cta";
 
 /**
@@ -11,8 +14,18 @@ import { Cta } from "@/components/Cta";
  * page never reads as a product tour.
  */
 export function Proof() {
-  const { heading, lead, supporting, supportingDisclaimer, takenOffIntro, takenOff, quote, authority } =
-    site.proof;
+  const {
+    heading,
+    ownResultsLabel,
+    lead,
+    supporting,
+    supportingDisclaimer,
+    takenOffIntro,
+    takenOff,
+    clientProofLabel,
+    quote,
+    authority,
+  } = proof;
 
   return (
     <section className="border-t border-hairline py-20 sm:py-28">
@@ -21,17 +34,18 @@ export function Proof() {
           {heading}
         </h2>
 
-        <p className="mt-8 max-w-[52ch] font-serif text-[clamp(1.5rem,2.2vw+0.5rem,2.125rem)] font-normal leading-[1.15] tracking-[-0.03em] text-ink">
-          {lead}
+        <p className="mt-8 text-xs font-medium tracking-[0.14em] text-muted">
+          {ownResultsLabel}
         </p>
-        <p className="mt-6 max-w-[60ch] text-[1.125rem] leading-relaxed text-muted">
-          {supporting}
-        </p>
-        <p className="mt-2 max-w-[60ch] text-sm leading-relaxed text-muted/70">
+        <ul className="mt-4 list-disc space-y-4 pl-5 text-xl">
+          <li>{lead}</li>
+          <li>{supporting}</li>
+        </ul>
+        <p className="mt-2 max-w-[60ch] text-base leading-relaxed text-ink">
           {supportingDisclaimer}
         </p>
 
-        <p className="mt-10 text-xs font-medium uppercase tracking-[0.14em] text-muted">
+        <p className="mt-10 text-xs font-medium tracking-[0.14em] text-muted">
           {takenOffIntro}
         </p>
         <ul className="mt-5 grid gap-4 md:grid-cols-3">
@@ -45,19 +59,32 @@ export function Proof() {
           ))}
         </ul>
 
-        <figure className="mt-14 max-w-[60ch] border-l-2 border-accent pl-6">
-          <blockquote className="text-lg leading-relaxed text-ink">
-            {quote.text}
-          </blockquote>
-          <figcaption className="mt-3 text-sm text-muted">{quote.attribution}</figcaption>
-        </figure>
+        <div className="mt-16 border-t border-hairline pt-10">
+          <p className="text-xs font-medium tracking-[0.14em] text-muted">
+            {clientProofLabel}
+          </p>
+          <figure className="mt-5 max-w-[60ch] border-l-2 border-accent pl-6">
+            <blockquote className="text-lg leading-relaxed text-ink">
+              {quote.text}
+            </blockquote>
+            <figcaption className="mt-3 text-sm text-muted">
+              {quote.attribution}
+            </figcaption>
+          </figure>
+        </div>
 
         <p className="mt-12 max-w-[60ch] text-base leading-relaxed text-muted">
           {authority}
         </p>
 
         <div className="mt-12">
-          <SampleOutputs />
+          <div className="grid items-start gap-6 md:grid-cols-2">
+            {EMAIL_MOCKUPS.map((email) => (
+              <EmailCard key={email.id} email={email} state={email.state} />
+            ))}
+            <InvoiceCard />
+            <MessageThread thread={MESSAGE_THREADS[2]} />
+          </div>
         </div>
 
         {/* Mid-page CTA (spec section 4), previously carried by the cut section. */}

@@ -1,7 +1,8 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
-import { site } from "@/content/site";
+import { BOOKING_URL, CTA_LABEL } from "@/content/site";
+import { booking } from "@/content/home";
 import { track, ANALYTICS_EVENTS } from "@/lib/analytics";
 
 const WIDGET_SRC = "https://assets.calendly.com/assets/external/widget.js";
@@ -12,7 +13,10 @@ type Status = "loading" | "ready" | "failed";
 declare global {
   interface Window {
     Calendly?: {
-      initInlineWidget: (opts: { url: string; parentElement: HTMLElement }) => void;
+      initInlineWidget: (opts: {
+        url: string;
+        parentElement: HTMLElement;
+      }) => void;
     };
   }
 }
@@ -64,7 +68,10 @@ export function CalendlyEmbed() {
 
     const init = () => {
       try {
-        window.Calendly?.initInlineWidget({ url: site.calendly.url, parentElement: parent });
+        window.Calendly?.initInlineWidget({
+          url: BOOKING_URL,
+          parentElement: parent,
+        });
       } catch {
         markFailed();
       }
@@ -112,22 +119,24 @@ export function CalendlyEmbed() {
     <div>
       {status === "failed" ? (
         <div className="card-raised flex min-h-[280px] flex-col items-center justify-center gap-4 rounded-2xl bg-card px-6 py-10 text-center">
-          <p className="text-muted">{site.booking.failed}</p>
+          <p className="text-muted">{booking.failed}</p>
           <a
-            href={site.calendly.url}
+            href={BOOKING_URL}
             target="_blank"
             rel="noopener noreferrer"
-            onClick={() => track(ANALYTICS_EVENTS.ctaClick, { location: "embed-fallback" })}
+            onClick={() =>
+              track(ANALYTICS_EVENTS.ctaClick, { location: "embed-fallback" })
+            }
             className="cta-button"
           >
-            {site.cta.label}
+            {CTA_LABEL}
           </a>
         </div>
       ) : (
         <div className="relative">
           {status === "loading" && (
             <p className="absolute inset-x-0 top-1/2 -translate-y-1/2 text-center text-sm text-muted">
-              {site.booking.loading}
+              {booking.loading}
             </p>
           )}
           {/*
@@ -142,29 +151,31 @@ export function CalendlyEmbed() {
             ref={parentRef}
             className="rounded-2xl"
             style={{ minWidth: "280px", height: "700px" }}
-            aria-label={site.booking.calendarLabel}
+            aria-label={booking.calendarLabel}
           />
         </div>
       )}
 
       <p className="mt-4 text-center text-sm text-muted">
-        {site.booking.troublePrefix}{" "}
+        {booking.troublePrefix}{" "}
         <a
-          href={site.calendly.url}
+          href={BOOKING_URL}
           target="_blank"
           rel="noopener noreferrer"
-          onClick={() => track(ANALYTICS_EVENTS.ctaClick, { location: "embed-plain-link" })}
+          onClick={() =>
+            track(ANALYTICS_EVENTS.ctaClick, { location: "embed-plain-link" })
+          }
           className="font-medium text-ink underline decoration-2 underline-offset-4"
         >
-          {site.booking.troubleLink}
+          {booking.troubleLink}
         </a>
         .
       </p>
 
       <noscript>
         <p className="mt-4 text-center text-sm text-muted">
-          <a href={site.calendly.url} className="font-medium text-ink underline">
-            {site.booking.noscript}
+          <a href={BOOKING_URL} className="font-medium text-ink underline">
+            {booking.noscript}
           </a>
           .
         </p>

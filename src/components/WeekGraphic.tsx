@@ -1,4 +1,4 @@
-import { site } from "@/content/site";
+import { weekGraphic } from "@/content/home";
 
 /**
  * Graphic A (spec section 6): the same week, before and after, as a small
@@ -8,11 +8,11 @@ import { site } from "@/content/site";
  * took given back as solid chips. Each half carries its own text alternative,
  * so the contrast is available to a screen reader too.
  */
-const { now, after } = site.weekGraphic;
+const { now, after } = weekGraphic;
 
 function Label({ children }: { children: React.ReactNode }) {
   return (
-    <p className="text-[0.7rem] font-medium uppercase tracking-[0.14em] text-muted">
+    <p className="text-[0.7rem] font-medium tracking-[0.14em] text-muted">
       {children}
     </p>
   );
@@ -55,7 +55,7 @@ export function WeekGraphic() {
           {after.handled.map((task) => (
             <span
               key={task}
-              className="rounded-md border border-hairline bg-paper px-2 py-1 text-[0.7rem] text-muted/50 line-through"
+              className="rounded-md border border-hairline bg-paper px-2 py-1 text-[0.7rem] text-muted line-through"
             >
               {task}
             </span>

@@ -1,4 +1,4 @@
-import { site } from "@/content/site";
+import { shift } from "@/content/home";
 import { Container } from "@/components/Container";
 import { WeekGraphic } from "@/components/WeekGraphic";
 
@@ -8,7 +8,7 @@ import { WeekGraphic } from "@/components/WeekGraphic";
  * contrast is felt without spending a whole section on it.
  */
 export function Shift() {
-  const { headingBefore, headingEmphasis, headingAfter, body } = site.shift;
+  const { headingBefore, headingEmphasis, headingAfter, body } = shift;
 
   return (
     <section className="border-t border-hairline py-20 sm:py-28">
@@ -20,6 +20,11 @@ export function Shift() {
               <em className="italic">{headingEmphasis}</em>
               {headingAfter}
             </h2>
+            <ul className="mt-8 space-y-5 text-lg">
+              {shift.recognition.map((item) => (
+                <li key={item}>{item}</li>
+              ))}
+            </ul>
             <div className="mt-8 max-w-[60ch] space-y-5 text-[1.125rem] leading-relaxed text-muted">
               {body.map((paragraph, index) => (
                 <p key={index}>{paragraph}</p>

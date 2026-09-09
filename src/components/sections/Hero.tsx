@@ -1,4 +1,4 @@
-import { site } from "@/content/site";
+import { hero } from "@/content/home";
 import { Container } from "@/components/Container";
 import { Cta } from "@/components/Cta";
 
@@ -8,12 +8,22 @@ import { Cta } from "@/components/Cta";
  * is deliberately no graphic here.
  */
 export function Hero() {
-  const { eyebrow, headlineBefore, headlineEmphasis, headlineAfter, body, ctaLead } = site.hero;
+  const {
+    eyebrow,
+    headlineBefore,
+    headlineEmphasis,
+    headlineAfter,
+    body,
+    ctaLead,
+  } = hero;
 
   return (
-    <section id="top" className="hero-atmosphere relative pt-16 pb-20 sm:pt-24 sm:pb-28 lg:pt-28">
+    <section
+      id="top"
+      className="hero-atmosphere relative pt-16 pb-20 sm:pt-24 sm:pb-28 lg:pt-28"
+    >
       <Container>
-        <p className="text-xs font-medium uppercase tracking-[0.18em] text-muted">
+        <p className="text-xs font-medium tracking-[0.18em] text-muted">
           {eyebrow}
         </p>
 
@@ -24,12 +34,18 @@ export function Hero() {
         </h1>
 
         <div className="mt-7 max-w-[48ch] space-y-5 text-[1.125rem] leading-relaxed text-muted">
-          {body.map((paragraph, index) => (
-            <p key={index}>{paragraph}</p>
-          ))}
+          <p>{body[0]}</p>
+          <ul className="grid list-disc gap-x-10 gap-y-3 pl-5 sm:grid-cols-2">
+            {hero.bullets.map((item) => (
+              <li key={item}>{item}</li>
+            ))}
+          </ul>
+          <p>{body[1]}</p>
         </div>
 
-        <p className="mt-7 max-w-[48ch] text-[1.125rem] leading-relaxed text-ink">{ctaLead}</p>
+        <p className="mt-7 max-w-[48ch] text-[1.125rem] leading-relaxed text-ink">
+          {ctaLead}
+        </p>
 
         <Cta className="mt-5" location="hero" />
       </Container>

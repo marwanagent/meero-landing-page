@@ -1,11 +1,7 @@
-import { site } from "@/content/site";
+import { site, ARTICLE_PATH } from "@/content/site";
 import { Container } from "@/components/Container";
 import { Cta } from "@/components/Cta";
 
-/**
- * Footer (spec section 4). Minimal: wordmark, the primary CTA one last time,
- * legal. No secondary links that pull attention off the single action.
- */
 export function Footer() {
   const year = new Date().getFullYear();
   return (
@@ -15,10 +11,13 @@ export function Footer() {
           <p className="font-serif text-2xl tracking-[-0.03em] text-ink">
             {site.brand.wordmark}
           </p>
+          <a href={ARTICLE_PATH} className="underline underline-offset-4">
+            {site.nav.articles}
+          </a>
           <Cta location="footer" />
         </div>
         <p className="mt-12 text-xs text-muted">
-          &copy; {year} {site.brand.legalName}. All rights reserved.
+          &copy; {year} {site.brand.legalName}. {site.footer.rights}
         </p>
       </Container>
     </footer>

@@ -8,7 +8,8 @@
     "build": "next build",
     "start": "next start",
     "lint": "eslint",
-    "check": "node scripts/check-placeholders.mjs"
+    "check": "node scripts/check-placeholders.mjs",
+    "check:articles": "node scripts/check-article-overlap.mjs"
   },
   "dependencies": {
     "next": "16.2.10",

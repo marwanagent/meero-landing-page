@@ -1,4 +1,4 @@
-import { site } from "@/content/site";
+import { faq } from "@/content/home";
 import { Container } from "@/components/Container";
 
 /**
@@ -10,13 +10,13 @@ export function Faq() {
     <section className="border-t border-hairline py-20 sm:py-28">
       <Container>
         <h2 className="font-serif text-[clamp(2rem,3.5vw+0.5rem,3rem)] font-normal leading-[1.06] tracking-[-0.035em] text-ink">
-          {site.faq.heading}
+          {faq.heading}
         </h2>
-        <dl className="mt-10 divide-y divide-hairline border-t border-hairline">
-          {site.faq.items.map((item) => (
+        <div className="mt-10 divide-y divide-hairline border-t border-hairline">
+          {faq.items.map((item) => (
             <details key={item.q} className="group py-5">
               <summary className="flex cursor-pointer list-none items-center justify-between gap-4 text-lg font-medium text-ink [&::-webkit-details-marker]:hidden">
-                <dt>{item.q}</dt>
+                <span>{item.q}</span>
                 <span
                   aria-hidden="true"
                   className="shrink-0 text-2xl leading-none text-muted transition-transform duration-200 group-open:rotate-45"
@@ -24,12 +24,12 @@ export function Faq() {
                   +
                 </span>
               </summary>
-              <dd className="mt-3 max-w-[62ch] text-base leading-relaxed text-muted">
+              <p className="mt-3 max-w-[62ch] text-base leading-relaxed text-muted">
                 {item.a}
-              </dd>
+              </p>
             </details>
           ))}
-        </dl>
+        </div>
       </Container>
     </section>
   );

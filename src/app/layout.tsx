@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { Instrument_Serif, DM_Sans } from "next/font/google";
 import "./globals.css";
-import { site } from "@/content/site";
+import { site, SITE_URL } from "@/content/site";
 
 // Display face: editorial serif, set tight (spec section 5).
 const instrumentSerif = Instrument_Serif({
@@ -20,7 +20,7 @@ const dmSans = DM_Sans({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://getmeero.com"),
+  metadataBase: new URL(SITE_URL),
   title: site.meta.title,
   description: site.meta.description,
   openGraph: {
@@ -41,7 +41,9 @@ export default function RootLayout({
       lang="en"
       className={`${instrumentSerif.variable} ${dmSans.variable} h-full antialiased`}
     >
-      <body className="min-h-full flex flex-col bg-paper text-ink">{children}</body>
+      <body className="min-h-full flex flex-col bg-paper text-ink">
+        {children}
+      </body>
     </html>
   );
 }

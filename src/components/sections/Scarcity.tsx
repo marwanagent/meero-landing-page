@@ -1,4 +1,4 @@
-import { site } from "@/content/site";
+import { scarcity } from "@/content/home";
 import { Container } from "@/components/Container";
 import { CalendlyEmbed } from "@/components/CalendlyEmbed";
 
@@ -12,10 +12,10 @@ export function Scarcity() {
     <section className="border-t border-hairline py-20 sm:py-28">
       <Container>
         <h2 className="font-serif text-[clamp(2rem,3.5vw+0.5rem,3rem)] font-normal leading-[1.06] tracking-[-0.035em] text-ink">
-          {site.scarcity.heading}
+          {scarcity.heading}
         </h2>
         <p className="mt-8 max-w-[60ch] text-[1.125rem] leading-relaxed text-muted">
-          {site.scarcity.body}
+          {scarcity.body}
         </p>
 
         <div id="book" className="mt-12 scroll-mt-24">

@@ -1,3 +1,9 @@
+import { Stack } from "@/components/sections/Stack";
+import { site, SITE_URL } from "@/content/site";
+export const metadata = {
+  alternates: { canonical: SITE_URL },
+  twitter: { card: "summary" as const, ...site.meta },
+};
 import { Analytics } from "@/components/Analytics";
 import { SiteHeader } from "@/components/SiteHeader";
 import { Hero } from "@/components/sections/Hero";
@@ -17,6 +23,7 @@ export default function Home() {
         <Hero />
         <Shift />
         <HowItWorks />
+        <Stack />
         <Proof />
         <Control />
         <Scarcity />
