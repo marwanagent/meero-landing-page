@@ -1,77 +1,70 @@
 import { weekGraphic } from "@/content/home";
 
-/**
- * Graphic A (spec section 6): the same week, before and after, as a small
- * side card beside the shift copy rather than a section of its own.
- *
- * Crowded chips on top, the same chips crossed out below, and the hours they
- * took given back as solid chips. Each half carries its own text alternative,
- * so the contrast is available to a screen reader too.
- */
-const { now, after } = weekGraphic;
-
-function Label({ children }: { children: React.ReactNode }) {
-  return (
-    <p className="text-[0.7rem] font-medium tracking-[0.14em] text-muted">
-      {children}
-    </p>
-  );
-}
+const taskColors = ["tomato", "peacock", "tangerine", "banana", "grape"];
+const freedColors = ["lavender", "basil", "flamingo", "peacock"];
+// Hours from 9 AM. Different starts and durations keep the working days distinct.
+const appointments = [
+  [
+    [0, 1.5], [1.5, 1], [2.5, 2], [4.25, 1.25], [5.5, 3]],
+  [
+    [0.5, 2], [2.5, 1.25], [3.5, 1.5], [5, 2], [7, 1.5]],
+  [
+    [0, 1], [1, 2.5], [3.5, 1.25], [4.75, 2], [6.75, 2]],
+  [
+    [0.25, 2], [2.25, 1], [3.25, 2.5], [5.5, 1.5], [7, 2]],
+  [
+    [0, 1.5], [1.5, 2], [3.25, 1.5], [4.75, 1.25], [6, 2.5]],
+];
 
 export function WeekGraphic() {
   return (
-    <figure className="card-raised rounded-2xl bg-card p-5 sm:p-6">
-      <div role="img" aria-label={now.alt}>
-        <Label>{now.label}</Label>
-        <div aria-hidden="true" className="mt-3 flex flex-wrap gap-1.5">
-          {now.tasks.map((task, i) => (
-            <span
-              key={`${task}-${i}`}
-              className="rounded-md border border-hairline bg-paper px-2 py-1 text-[0.7rem] text-ink"
-            >
-              {task}
-            </span>
-          ))}
+    <figure className="week-comparison card-raised" aria-describedby="week-description">
+      <figcaption id="week-description" className="sr-only">
+        {weekGraphic.description}
+      </figcaption>
+      {(["now", "after"] as const).map((state) => (
+        <div key={state} className={`calendar calendar-${state}`} role="img" aria-label={weekGraphic[state].alt}>
+          <div aria-hidden="true">
+            <div className="calendar-title">
+              <span>{weekGraphic[state].label}</span>
+              {state === "after" && <span className="calendar-status">{weekGraphic.handledLabel}</span>}
+            </div>
+            <div className="calendar-days">
+              <span />
+              {weekGraphic.days.map((day) => <span key={day}>{day}</span>)}
+            </div>
+            <div className="calendar-body">
+              <div className="calendar-times">
+                {weekGraphic.times.map((time, i) => <span key={time} style={{ top: `${i * 25}%` }}>{time}</span>)}
+              </div>
+              <div className="calendar-columns">
+                {weekGraphic.days.map((day, dayIndex) => (
+                  <div className="calendar-day" key={day}>
+                    {state === "now" ? appointments[dayIndex].map(([start, duration], index) => {
+                      const taskIndex = (index + dayIndex) % 5;
+                      return (
+                        <span key={index} className={`calendar-event task-${taskColors[taskIndex]}`} style={{ top: `${start / 8 * 100}%`, height: `${duration / 8 * 100}%`, left: index === 3 ? "10%" : undefined }}>
+                          {weekGraphic.now.tasks[taskIndex]}
+                        </span>
+                      );
+                    }) : (
+                      <>
+                        <span className={`calendar-event calendar-handled task-${taskColors[dayIndex]}`} style={{ top: 0, height: "19%" }}>
+                          <s>{weekGraphic.after.handled[dayIndex]}</s>
+                        </span>
+                        {dayIndex !== 2 && <span className={`calendar-event task-${freedColors[dayIndex > 2 ? dayIndex - 1 : dayIndex]}`} style={{ top: `${dayIndex % 2 ? 55 : 30}%`, height: `${dayIndex === 4 ? 55 : 32}%` }}>
+                          {weekGraphic.after.freed[dayIndex > 2 ? dayIndex - 1 : dayIndex]}
+                        </span>}
+                      </>
+                    )}
+                  </div>
+                ))}
+                <span className="calendar-now-line" title={weekGraphic.nowLine} />
+              </div>
+            </div>
+          </div>
         </div>
-      </div>
-
-      <div aria-hidden="true" className="my-5 flex items-center gap-3">
-        <span className="h-px flex-1 bg-hairline" />
-        <svg viewBox="0 0 24 24" className="h-4 w-4 text-accent" fill="none">
-          <path
-            d="M12 5v14M6 13l6 6 6-6"
-            stroke="currentColor"
-            strokeWidth="2"
-            strokeLinecap="round"
-            strokeLinejoin="round"
-          />
-        </svg>
-        <span className="h-px flex-1 bg-hairline" />
-      </div>
-
-      <div role="img" aria-label={after.alt}>
-        <Label>{after.label}</Label>
-        <div aria-hidden="true" className="mt-3 flex flex-wrap gap-1.5">
-          {after.handled.map((task) => (
-            <span
-              key={task}
-              className="rounded-md border border-hairline bg-paper px-2 py-1 text-[0.7rem] text-muted line-through"
-            >
-              {task}
-            </span>
-          ))}
-        </div>
-        <div aria-hidden="true" className="mt-2.5 flex flex-wrap gap-1.5">
-          {after.freed.map((task) => (
-            <span
-              key={task}
-              className="rounded-md bg-ink px-2.5 py-1 text-[0.7rem] font-medium text-paper"
-            >
-              {task}
-            </span>
-          ))}
-        </div>
-      </div>
+      ))}
     </figure>
   );
 }

@@ -12,7 +12,6 @@ export const metadata = {
 import { Analytics } from "@/components/Analytics";
 import { SiteHeader } from "@/components/SiteHeader";
 import { Hero } from "@/components/sections/Hero";
-import { Shift } from "@/components/sections/Shift";
 import { HowItWorks } from "@/components/sections/HowItWorks";
 import { Proof } from "@/components/sections/Proof";
 import { Control } from "@/components/sections/Control";
@@ -27,7 +26,6 @@ export default function Home() {
       <SiteHeader />
       <main className="flex-1">
         <Hero />
-        <Shift />
         <HowItWorks />
         <Stack />
         <Proof />

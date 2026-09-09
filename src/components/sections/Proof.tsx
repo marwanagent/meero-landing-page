@@ -83,7 +83,11 @@ export function Proof() {
               <EmailCard key={email.id} email={email} state={email.state} />
             ))}
             <InvoiceCard />
-            <MessageThread thread={MESSAGE_THREADS[2]} />
+          </div>
+          <div className="mt-6 grid items-start gap-6 md:grid-cols-2">
+            {MESSAGE_THREADS.slice(2).map((thread) => (
+              <MessageThread key={thread.id} thread={thread} />
+            ))}
           </div>
         </div>
 

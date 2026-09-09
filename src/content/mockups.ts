@@ -46,6 +46,17 @@ export const MESSAGE_THREADS = [
       },
     ],
   },
+  {
+    id: "forums",
+    messages: [
+      { direction: "out", text: "forums doc", time: "17:12" },
+      {
+        direction: "in",
+        text: "Here is a doc with links to forum conversations where your ICP is asking questions",
+        time: "17:12",
+      },
+    ],
+  },
 ] as const;
 export type MessageThreadData = (typeof MESSAGE_THREADS)[number];
 export const EMAIL_MOCKUPS = [

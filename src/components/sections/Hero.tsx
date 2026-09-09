@@ -1,53 +1,37 @@
 import { hero } from "@/content/home";
 import { Container } from "@/components/Container";
 import { Cta } from "@/components/Cta";
+import { WeekGraphic } from "@/components/WeekGraphic";
 
-/**
- * Hero (spec section 4 + 5): text only, left-aligned, sized so the headline
- * owns the first viewport. The wordmark lives in the sticky header, and there
- * is deliberately no graphic here.
- */
+const bulletColors = ["tomato", "peacock", "banana", "tangerine"];
+
 export function Hero() {
-  const {
-    eyebrow,
-    headlineBefore,
-    headlineEmphasis,
-    headlineAfter,
-    body,
-    ctaLead,
-  } = hero;
-
   return (
-    <section
-      id="top"
-      className="hero-atmosphere relative pt-16 pb-20 sm:pt-24 sm:pb-28 lg:pt-28"
-    >
-      <Container>
-        <p className="text-xs font-medium tracking-[0.18em] text-muted">
-          {eyebrow}
-        </p>
-
-        <h1 className="mt-6 max-w-[15ch] font-serif text-[clamp(2.75rem,5vw+1rem,4.5rem)] font-normal leading-[1.0] tracking-[-0.04em] text-ink">
-          {headlineBefore}
-          <em className="italic">{headlineEmphasis}</em>
-          {headlineAfter}
-        </h1>
-
-        <div className="mt-7 max-w-[48ch] space-y-5 text-[1.125rem] leading-relaxed text-muted">
-          <p>{body[0]}</p>
-          <ul className="grid list-disc gap-x-10 gap-y-3 pl-5 sm:grid-cols-2">
-            {hero.bullets.map((item) => (
-              <li key={item}>{item}</li>
-            ))}
-          </ul>
-          <p>{body[1]}</p>
+    <section id="top" className="hero-atmosphere relative py-10 sm:py-14">
+      <Container className="hero-container">
+        <div className="hero-layout">
+          <div className="min-w-0">
+            <p className="text-xs font-medium tracking-[0.18em] text-muted">{hero.eyebrow}</p>
+            <h1 className="mt-5 max-w-[19ch] font-serif text-[clamp(2.5rem,3.8vw,3.5rem)] font-normal leading-[1.04] tracking-[-0.04em] text-ink">
+              {hero.headlineBefore}<em className="text-message-blue italic">{hero.headlineEmphasis}</em>{hero.headlineAfter}
+            </h1>
+            <div className="mt-5 max-w-[58ch] space-y-4 text-base leading-relaxed text-muted">
+              <p>{hero.body[0]}</p>
+              <ul className="grid gap-x-5 gap-y-3 sm:grid-cols-2">
+                {hero.bullets.map((item, index) => (
+                  <li key={item} className="flex items-start gap-2.5">
+                    <span aria-hidden="true" className={`hero-marker task-${bulletColors[index]}`} />
+                    <span>{item}</span>
+                  </li>
+                ))}
+              </ul>
+              <p>{hero.body[1]}</p>
+            </div>
+            <p className="mt-5 max-w-[48ch] text-base leading-relaxed text-ink">{hero.ctaLead}</p>
+            <Cta className="mt-4" location="hero" />
+          </div>
+          <WeekGraphic />
         </div>
-
-        <p className="mt-7 max-w-[48ch] text-[1.125rem] leading-relaxed text-ink">
-          {ctaLead}
-        </p>
-
-        <Cta className="mt-5" location="hero" />
       </Container>
     </section>
   );

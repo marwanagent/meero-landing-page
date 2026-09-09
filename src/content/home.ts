@@ -28,23 +28,13 @@ export const hero = {
   ],
 } as const;
 
-export const shift = {
-  headingBefore: "You did not quit your 9-5 so you can work ",
-  headingEmphasis: "24/7",
-  headingAfter: ".",
-  body: [
-    "One conversation, and you leave knowing what is in the way of your time and your revenue ceiling. You get something out of it whether we work together or not.",
-  ],
-  recognition: [
-    "You are profitable, and still working nights",
-    "You tried hiring, and now you manage the hire too",
-    "Outbound only happens in the weeks you have time for it, which is not most weeks",
-    "The follow-up you meant to send is still not sent",
-    "You are the bottleneck, and you know it",
-  ],
-} as const;
-
 export const weekGraphic = {
+  description: "An illustrative working week. Repeating work fills the first calendar; crossed-out tasks are handled by MEERO in the second.",
+  days: ["Mon", "Tue", "Wed", "Thu", "Fri"],
+  times: ["9 AM", "11 AM", "1 PM", "3 PM", "5 PM"],
+  handledLabel: "Repeating work handled",
+  nowLine: "Wednesday, 12:30 PM",
+
   now: {
     label: "Your week now",
     alt: "A crowded week where every repeating task is a block you personally have to fill: outreach, follow-ups, invoicing, inbox, and admin, over and over.",
