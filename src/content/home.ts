@@ -11,9 +11,9 @@ export const booking = {
 
 export const hero = {
   eyebrow: `An ${CATEGORY_NOUN} built for your business alone`,
-  headlineBefore: "Clear the space to focus on the work that actually needs ",
-  headlineEmphasis: "you",
-  headlineAfter: ".",
+  headlineBefore: "Run your business in ",
+  headlineEmphasis: "half the time",
+  headlineAfter: "",
   body: [
     "I look at how your business actually runs, find what is eating your time and capping your revenue, and tell you straight whether it can be automated.",
     "It is not a person you have to train, and it is not an app you have to learn. It runs on its own schedule and pings you when something needs your call.",
@@ -63,29 +63,28 @@ export const howItWorks = {
   heading: "How it works",
   steps: [
     {
-      title: "I find what is really holding you back.",
-      body: "One free call. You leave with steps you can act on either way.",
+      title: "Clarity",
+      body: "One call, we break down your bottlenecks and what things can be automated to save you time",
     },
     {
-      title: "I build it for your business.",
-      body: "Around the tools you already use. You set up nothing and learn nothing.",
+      title: "Build",
+      body: "I build your agent from scratch, custom. It handles tasks on a schedule and integrates with any apps you already use. You talk with it through messages or email so you don't have to learn how to use any new apps or tools.",
     },
     {
-      title: "It runs, and you stay in charge.",
-      body: "It works on a schedule. You approve, pause, or change it from your phone.",
+      title: "You sit back, I keep it running",
+      body: "You see the work getting done, and don't have to lift a finger. Your emails sent, your client capture and follow-up handled, your invoices paid. And a whole lot more.",
     },
   ],
 } as const;
 
 export const proof = {
-  heading: "Proof",
+  heading: "Agents I've built",
   // Two distinct proof types, deliberately labelled and separated: Marwan's own
   // business results, then a client he built for. Merging them makes it unclear
   // whose numbers are whose.
-  ownResultsLabel: "From my own business",
-  lead: "The research and outreach assistant I built for my own business took me from almost no outreach, because I never had the time for it, to 6 to 10 booked calls a month and a 10K close within the first month.",
+  lead: "Prospect finder and personalized email agent. Took me from basically zero to 15 booked calls a month and a 10K close within the first month.",
   supporting:
-    "The research and email list building is so good it gets an 18.6% reply rate.",
+    "The emails are so personalized, I got an 18.6% reply rate.",
   supportingDisclaimer:
     "These are the numbers I got for my own business. A specific reply rate is not guaranteed for yours.",
   takenOffIntro: "Work it already handles for me, every week, without me:",
@@ -99,8 +98,6 @@ export const proof = {
     text: "I used to lose hours every week researching opportunities for my work. Now that time is basically zero, and every week I get a clear list of the highest-leverage moves to make, including ones I never would have found on my own.",
     attribution: "T. Chavez",
   },
-  authority:
-    "It runs on machines that are watched every day. Failed steps retry on their own, and I know when something needs attention.",
 } as const;
 
 export const control = {
@@ -110,7 +107,7 @@ export const control = {
 
 export const scarcity = {
   heading: "Start with one call",
-  body: "I make each one from scratch myself, so I only take on a few clients at a time. If your week is full and your revenue is stuck where it is, start with one call. You leave with clear steps either way.",
+  body: "I make each one from scratch myself, so I only take on a few clients at a time. If your week is full and your revenue is stuck, start with one call. You leave with clarity either way.",
 } as const;
 
 export const faq = {
@@ -126,7 +123,7 @@ export const faq = {
     },
     {
       q: "What does it cost?",
-      a: "It is priced against the work it takes over, so the number is specific to you. The first call is free, and by the end of it you will know what building something would involve.",
+      a: "Each agent is different so the number is specific to you. I won't offer to build you an agent if it isn't the best fit. You leave the call with clarity on your bottlenecks regardless.",
     },
     {
       q: "What if it stops working?",

@@ -1,9 +1,6 @@
 import { proof } from "@/content/home";
 import { Container } from "@/components/Container";
-import { EmailCard } from "@/components/mockups/EmailCard";
-import { InvoiceCard } from "@/components/mockups/InvoiceCard";
-import { MessageThread } from "@/components/mockups/MessageThread";
-import { EMAIL_MOCKUPS, MESSAGE_THREADS } from "@/content/mockups";
+import { TaskVisual } from "@/components/TaskVisual";
 import { Cta } from "@/components/Cta";
 
 /**
@@ -16,7 +13,6 @@ import { Cta } from "@/components/Cta";
 export function Proof() {
   const {
     heading,
-    ownResultsLabel,
     lead,
     supporting,
     supportingDisclaimer,
@@ -24,7 +20,6 @@ export function Proof() {
     takenOff,
     clientProofLabel,
     quote,
-    authority,
   } = proof;
 
   return (
@@ -34,10 +29,7 @@ export function Proof() {
           {heading}
         </h2>
 
-        <p className="mt-8 text-xs font-medium tracking-[0.14em] text-muted">
-          {ownResultsLabel}
-        </p>
-        <ul className="mt-4 list-disc space-y-4 pl-5 text-xl">
+        <ul className="mt-8 list-disc space-y-4 pl-5 text-xl">
           <li>{lead}</li>
           <li>{supporting}</li>
         </ul>
@@ -45,16 +37,17 @@ export function Proof() {
           {supportingDisclaimer}
         </p>
 
-        <p className="mt-10 text-xs font-medium tracking-[0.14em] text-muted">
+        <p className="mt-10 text-lg font-semibold text-ink">
           {takenOffIntro}
         </p>
         <ul className="mt-5 grid gap-4 md:grid-cols-3">
-          {takenOff.map((item) => (
+          {takenOff.map((item, index) => (
             <li
               key={item}
-              className="border-t border-ink/15 pt-4 text-base leading-relaxed text-muted"
+              className="min-w-0 overflow-hidden rounded-2xl border border-ink/10 bg-card"
             >
-              {item}
+              <TaskVisual task={index} />
+              <p className="p-6 text-lg font-semibold leading-snug text-ink">{item}</p>
             </li>
           ))}
         </ul>
@@ -71,24 +64,6 @@ export function Proof() {
               {quote.attribution}
             </figcaption>
           </figure>
-        </div>
-
-        <p className="mt-12 max-w-[60ch] text-base leading-relaxed text-muted">
-          {authority}
-        </p>
-
-        <div className="mt-12">
-          <div className="grid items-start gap-6 md:grid-cols-2">
-            {EMAIL_MOCKUPS.map((email) => (
-              <EmailCard key={email.id} email={email} state={email.state} />
-            ))}
-            <InvoiceCard />
-          </div>
-          <div className="mt-6 grid items-start gap-6 md:grid-cols-2">
-            {MESSAGE_THREADS.slice(2).map((thread) => (
-              <MessageThread key={thread.id} thread={thread} />
-            ))}
-          </div>
         </div>
 
         {/* Mid-page CTA (spec section 4), previously carried by the cut section. */}

@@ -11,29 +11,26 @@ export function HowItWorks() {
         <h2 className="font-serif text-[clamp(2rem,3.5vw+0.5rem,3rem)] font-normal leading-[1.06] tracking-[-0.035em] text-ink">
           {howItWorks.heading}
         </h2>
-        <ol className="mt-12 grid gap-10 md:grid-cols-3 md:gap-8">
+        <ol role="list" className="mt-12 space-y-14 md:space-y-20">
           {howItWorks.steps.map((step, i) => (
-            <li key={step.title} className="flex flex-col">
-              <span
-                aria-hidden="true"
-                className="font-serif text-4xl text-ink/25"
-              >
-                {i + 1}
-              </span>
-              <h3 className="mt-4 text-lg font-semibold text-ink">
-                {step.title}
-              </h3>
-              <p className="mt-3 text-base leading-relaxed text-muted">
-                {step.body}
-              </p>
+            <li key={step.title} className="grid items-center gap-7 md:grid-cols-2 md:gap-16">
+              <div className={i === 1 ? "min-w-0 md:col-start-2 md:row-start-1" : "min-w-0"}>
+                <span aria-hidden="true" className="inline-flex size-11 items-center justify-center rounded-full bg-ink font-serif text-2xl text-paper">
+                  {i + 1}
+                </span>
+                <h3 className="mt-5 font-serif text-3xl leading-tight text-ink">
+                  {step.title}
+                </h3>
+                <p className="mt-4 max-w-[48ch] text-base leading-relaxed text-muted">
+                  {step.body}
+                </p>
+              </div>
+              <div className={i === 1 ? "min-w-0 md:col-start-1 md:row-start-1" : "min-w-0"}>
+                <MessageThread thread={MESSAGE_THREADS[i]} />
+              </div>
             </li>
           ))}
         </ol>
-        <div className="mt-10 grid gap-6 md:grid-cols-2">
-          {MESSAGE_THREADS.slice(0, 2).map((thread) => (
-            <MessageThread key={thread.id} thread={thread} />
-          ))}
-        </div>
       </Container>
     </section>
   );

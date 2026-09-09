@@ -1,5 +1,5 @@
 export const CATEGORY_NOUN = "AI agent";
-export const CTA_LABEL = "Save me time";
+export const CTA_LABEL = "I want to save time";
 export const CTA_SUBLABEL = "One call, leave with clear steps.";
 export const BOOKING_URL =
   "https://calendly.com/marwan-treehousemusic/bottleneck-audit";
