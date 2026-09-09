@@ -18,3 +18,10 @@ export const site = {
   },
   footer: { rights: "All rights reserved." },
 } as const;
+
+export const socialImage = {
+  url: `${SITE_URL}/og-image.png`,
+  width: 1200,
+  height: 630,
+  alt: site.meta.title,
+} as const;

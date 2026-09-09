@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { Instrument_Serif, DM_Sans } from "next/font/google";
 import "./globals.css";
-import { site, SITE_URL } from "@/content/site";
+import { site, SITE_URL, socialImage } from "@/content/site";
 
 // Display face: editorial serif, set tight (spec section 5).
 const instrumentSerif = Instrument_Serif({
@@ -24,6 +24,7 @@ export const metadata: Metadata = {
   title: site.meta.title,
   description: site.meta.description,
   openGraph: {
+    images: [socialImage],
     title: site.meta.title,
     description: site.meta.description,
     type: "website",

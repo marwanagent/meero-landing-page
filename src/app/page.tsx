@@ -1,8 +1,13 @@
+import { StructuredData } from "@/components/StructuredData";
 import { Stack } from "@/components/sections/Stack";
-import { site, SITE_URL } from "@/content/site";
+import { site, SITE_URL, socialImage } from "@/content/site";
 export const metadata = {
   alternates: { canonical: SITE_URL },
-  twitter: { card: "summary" as const, ...site.meta },
+  twitter: {
+    images: [socialImage],
+    card: "summary_large_image" as const,
+    ...site.meta,
+  },
 };
 import { Analytics } from "@/components/Analytics";
 import { SiteHeader } from "@/components/SiteHeader";
@@ -18,6 +23,7 @@ import { Footer } from "@/components/sections/Footer";
 export default function Home() {
   return (
     <>
+      <StructuredData page="home" />
       <SiteHeader />
       <main className="flex-1">
         <Hero />

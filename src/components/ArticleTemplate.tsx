@@ -1,3 +1,4 @@
+import { StructuredData } from "@/components/StructuredData";
 import Link from "next/link";
 import { Container } from "@/components/Container";
 import { Cta } from "@/components/Cta";
@@ -6,38 +7,12 @@ import { Footer } from "@/components/sections/Footer";
 import { articles } from "@/content/articles";
 import type { Article } from "@/content/articles/types";
 import { articleCopy } from "@/content/articles/ui";
-import { ARTICLE_PATH, SITE_URL, site } from "@/content/site";
+import { ARTICLE_PATH, site } from "@/content/site";
 export function ArticleTemplate({ article }: { article: Article }) {
   const index = articles.findIndex((item) => item.slug === article.slug);
   const siblings = [
     articles[(index + 1) % articles.length],
     articles[(index + 2) % articles.length],
-  ];
-  const schema = [
-    {
-      "@context": "https://schema.org",
-      "@type": "Article",
-      headline: article.title,
-      description: article.metaDescription,
-      datePublished: article.publishedISO,
-      dateModified: article.updatedISO,
-      author: { "@type": "Person", name: site.brand.author },
-      publisher: {
-        "@type": "Organization",
-        name: site.brand.legalName,
-        url: SITE_URL,
-      },
-      mainEntityOfPage: `${SITE_URL}${ARTICLE_PATH}/${article.slug}`,
-    },
-    {
-      "@context": "https://schema.org",
-      "@type": "FAQPage",
-      mainEntity: article.faq.map((item) => ({
-        "@type": "Question",
-        name: item.q,
-        acceptedAnswer: { "@type": "Answer", text: item.a },
-      })),
-    },
   ];
   return (
     <>
@@ -126,12 +101,7 @@ export function ArticleTemplate({ article }: { article: Article }) {
         </Container>
       </main>
       <Footer />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify(schema).replace(/</g, "\\u003c"),
-        }}
-      />
+      <StructuredData page={article} />
     </>
   );
 }

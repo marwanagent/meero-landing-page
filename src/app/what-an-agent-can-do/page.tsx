@@ -1,22 +1,25 @@
+import { StructuredData } from "@/components/StructuredData";
 import type { Metadata } from "next";
 import { Container } from "@/components/Container";
 import { SiteHeader } from "@/components/SiteHeader";
 import { Footer } from "@/components/sections/Footer";
 import { articles } from "@/content/articles";
 import { articleCopy } from "@/content/articles/ui";
-import { ARTICLE_PATH, SITE_URL } from "@/content/site";
+import { ARTICLE_PATH, SITE_URL, socialImage } from "@/content/site";
 export const metadata: Metadata = {
   title: articleCopy.hubTitle,
   description: articleCopy.hubDescription,
   alternates: { canonical: `${SITE_URL}${ARTICLE_PATH}` },
   openGraph: {
+    images: [socialImage],
     title: articleCopy.hubTitle,
     description: articleCopy.hubDescription,
     url: `${SITE_URL}${ARTICLE_PATH}`,
     type: "website",
   },
   twitter: {
-    card: "summary",
+    images: [socialImage],
+    card: "summary_large_image",
     title: articleCopy.hubTitle,
     description: articleCopy.hubDescription,
   },
@@ -24,6 +27,7 @@ export const metadata: Metadata = {
 export default function ArticleHub() {
   return (
     <>
+      <StructuredData page="hub" />
       <SiteHeader />
       <main className="flex-1 py-16 sm:py-24">
         <Container>

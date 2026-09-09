@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { articles } from "@/content/articles";
 import { ArticleTemplate } from "@/components/ArticleTemplate";
-import { SITE_URL, ARTICLE_PATH } from "@/content/site";
+import { SITE_URL, ARTICLE_PATH, socialImage } from "@/content/site";
 export const dynamicParams = false;
 export function generateStaticParams() {
   return articles.map(({ slug }) => ({ slug }));
@@ -18,6 +18,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     description: article.metaDescription,
     alternates: { canonical: url },
     openGraph: {
+      images: [socialImage],
       type: "article",
       title: article.title,
       description: article.metaDescription,
@@ -26,7 +27,8 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       modifiedTime: article.updatedISO,
     },
     twitter: {
-      card: "summary",
+      images: [socialImage],
+      card: "summary_large_image",
       title: article.title,
       description: article.metaDescription,
     },
