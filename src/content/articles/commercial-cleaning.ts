@@ -2,9 +2,9 @@ import type { Article } from "./types";
 
 export const article: Article = {
   "slug": "commercial-cleaning",
-  "title": "How commercial cleaning companies can confirm shift coverage and site quality",
+  "title": "AI agents for commercial cleaning: shift coverage and site quality",
   "tasksHeading": "What an AI agent can automate for commercial cleaning companies",
-  "seoTitle": "Cleaning Shift Coverage and QC Automation | MEERO",
+  "seoTitle": "AI Agents for Commercial Cleaning | MEERO",
   "faqHeading": "Commercial cleaning companies automation: common questions",
   "nowHeading": "How to fix commercial cleaning shift coverage and site quality checks without hiring anyone",
   "metaDescription": "Commercial cleaning companies can verify shift coverage, organize quality inspections, and track site issues against each contract’s scope of work.",

@@ -2,9 +2,9 @@ import type { Article } from "./types";
 
 export const article: Article = {
   "slug": "law-firms",
-  "title": "How law firms can automate client intake and conflict-check preparation",
+  "title": "AI agents for law firms: client intake and conflict checks",
   "tasksHeading": "What an AI agent can automate for law firms",
-  "seoTitle": "Law Firm Intake and Conflict Check Automation | MEERO",
+  "seoTitle": "AI Agents for Law Firm Intake | MEERO",
   "faqHeading": "Law firms automation: common questions",
   "nowHeading": "How to fix law firm intake and conflict-check preparation without hiring anyone",
   "metaDescription": "Law firms can organize conflict-check preparation, consultation routing, and engagement letters while lawyers retain every acceptance decision.",

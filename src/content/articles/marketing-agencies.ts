@@ -2,9 +2,9 @@ import type { Article } from "./types";
 
 export const article: Article = {
   "slug": "marketing-agencies",
-  "title": "How marketing agencies can automate client reporting and scope requests",
+  "title": "How marketing agencies use AI agents for client reporting and scope control",
   "tasksHeading": "What an AI agent can automate for marketing agencies",
-  "seoTitle": "Automating Agency Client Reporting and Scope | MEERO",
+  "seoTitle": "AI Agents for Agency Client Reporting | MEERO",
   "faqHeading": "Marketing agencies automation: common questions",
   "nowHeading": "How to fix agency client reporting and scope requests without hiring anyone",
   "metaDescription": "Marketing agencies can assemble campaign reports, track creative approvals, and flag requests outside the signed scope before assigning work.",

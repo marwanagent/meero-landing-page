@@ -2,9 +2,9 @@ import type { Article } from "./types";
 
 export const article: Article = {
   "slug": "bookkeeping-firms",
-  "title": "How bookkeeping firms can stop chasing month-end documents",
+  "title": "AI agents for bookkeeping firms: chasing month-end documents",
   "tasksHeading": "What an AI agent can automate for bookkeeping firms",
-  "seoTitle": "Automating Month End Document Chasing | MEERO",
+  "seoTitle": "AI Agents for Bookkeeping Firms | MEERO",
   "faqHeading": "Bookkeeping firms automation: common questions",
   "nowHeading": "How to fix bookkeeping month-end document collection without hiring anyone",
   "metaDescription": "Bookkeeping firms can organize missing receipts, statement requests, and close exceptions by entity so document gaps stay visible through month-end.",

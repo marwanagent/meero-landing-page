@@ -2,9 +2,9 @@ import type { Article } from "./types";
 
 export const article: Article = {
   "slug": "med-spas",
-  "title": "How med spas can reduce no-shows and rebook treatment packages",
+  "title": "How med spas use AI agents to cut no-shows and rebook treatments",
   "tasksHeading": "What an AI agent can automate for med spas",
-  "seoTitle": "Med Spa No Show and Rebooking Automation | MEERO",
+  "seoTitle": "AI Agents for Med Spa No Shows | MEERO",
   "faqHeading": "Med spas automation: common questions",
   "nowHeading": "How to fix med spa attendance and treatment package rebooking without hiring anyone",
   "metaDescription": "Med spas can track appointment deposits, prepare approved aftercare check-ins, and coordinate package rebooking while providers handle clinical questions.",

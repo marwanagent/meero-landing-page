@@ -2,9 +2,9 @@ import type { Article } from "./types";
 
 export const article: Article = {
   "slug": "hvac-contractors",
-  "title": "How HVAC contractors can follow up on quotes and renew maintenance agreements",
+  "title": "How HVAC contractors use AI agents for quote follow-up and renewals",
   "tasksHeading": "What an AI agent can automate for HVAC contractors",
-  "seoTitle": "HVAC Quote Follow Up and Renewal Automation | MEERO",
+  "seoTitle": "AI Agents for HVAC Quote Follow Up | MEERO",
   "faqHeading": "HVAC contractors automation: common questions",
   "nowHeading": "How to fix HVAC quote follow-up and maintenance renewals without hiring anyone",
   "metaDescription": "HVAC contractors can track post-visit quotes, renew service agreements, and coordinate parts and callbacks using current job-ticket details.",

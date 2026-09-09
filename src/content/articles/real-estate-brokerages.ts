@@ -2,9 +2,9 @@ import type { Article } from "./types";
 
 export const article: Article = {
   "slug": "real-estate-brokerages",
-  "title": "How real estate brokerages can coordinate showings and seller updates",
+  "title": "How real estate brokerages use AI agents for showings and seller updates",
   "tasksHeading": "What an AI agent can automate for real estate brokerages",
-  "seoTitle": "Automating Showings and Seller Updates | MEERO",
+  "seoTitle": "AI Agents for Real Estate Brokerages | MEERO",
   "faqHeading": "Real estate brokerages automation: common questions",
   "nowHeading": "How to fix real estate showing coordination and seller updates without hiring anyone",
   "metaDescription": "Real estate brokerages can coordinate showing access, gather buyer-agent feedback, and prepare seller updates from recorded listing activity.",

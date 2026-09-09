@@ -2,9 +2,9 @@ import type { Article } from "./types";
 
 export const article: Article = {
   "slug": "consulting-firms",
-  "title": "How consulting firms can turn scoping calls into proposals faster",
+  "title": "AI agents for consulting firms: scoping calls to signed proposals",
   "tasksHeading": "What an AI agent can automate for consulting firms",
-  "seoTitle": "Scoping Calls to Proposals, Automated | MEERO",
+  "seoTitle": "AI Agents for Consulting Proposals | MEERO",
   "faqHeading": "Consulting firms automation: common questions",
   "nowHeading": "How to fix consulting proposal preparation from scoping calls without hiring anyone",
   "metaDescription": "Consulting firms can turn scoping notes into proposal drafts, reconcile statement-of-work versions, and check delivery capacity before kickoff.",
