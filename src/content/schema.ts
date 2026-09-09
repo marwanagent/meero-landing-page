@@ -1,3 +1,5 @@
+import type { Breadcrumb } from "./breadcrumbs";
+import { pages } from "./pages";
 import type { Article } from "./articles/types";
 import { articleCopy } from "./articles/ui";
 import { hero } from "./home";
@@ -24,6 +26,7 @@ function sharedNodes() {
       "@type": "Person",
       "@id": ids.person,
       name: site.brand.author,
+      url: `${SITE_URL}${pages.about.path}`,
     },
     {
       "@type": "WebSite",
@@ -35,13 +38,14 @@ function sharedNodes() {
   ];
 }
 
-export function pageGraph(kind: "home" | "hub" | Article) {
+export function pageGraph(kind: "home" | "hub" | "about" | "privacy" | Article, breadcrumbs: Breadcrumb[] = []) {
+  const page = kind === "about" || kind === "privacy" ? pages[kind] : undefined;
   const article = typeof kind === "object" ? kind : undefined;
   const url = article
     ? `${SITE_URL}${ARTICLE_PATH}/${article.slug}`
-    : kind === "hub" ? `${SITE_URL}${ARTICLE_PATH}` : `${SITE_URL}/`;
-  const name = article?.title ?? (kind === "hub" ? articleCopy.hubTitle : site.meta.title);
-  const description = article?.metaDescription ?? (kind === "hub" ? articleCopy.hubDescription : site.meta.description);
+    : page ? `${SITE_URL}${page.path}` : kind === "hub" ? `${SITE_URL}${ARTICLE_PATH}` : `${SITE_URL}/`;
+  const name = article?.title ?? page?.title ?? (kind === "hub" ? articleCopy.hubTitle : site.meta.title);
+  const description = article?.metaDescription ?? page?.metaDescription ?? (kind === "hub" ? articleCopy.hubDescription : site.meta.description);
   return {
     "@context": "https://schema.org",
     "@graph": [
@@ -54,6 +58,8 @@ export function pageGraph(kind: "home" | "hub" | Article) {
         description,
         isPartOf: ref(ids.website),
         ...(article ? { mainEntity: ref(`${url}#article`) } : {}),
+        ...(breadcrumbs.length ? { breadcrumb: ref(`${url}#breadcrumb`) } : {}),
+        ...(kind === "about" ? { mainEntity: ref(ids.person) } : {}),
         ...(kind === "home" ? { mainEntity: ref(ids.service) } : {}),
       },
       ...(kind === "home" ? [{
@@ -63,6 +69,16 @@ export function pageGraph(kind: "home" | "hub" | Article) {
         description: hero.body[0],
         provider: ref(ids.organization),
         mainEntityOfPage: ref(`${url}#webpage`),
+      }] : []),
+      ...(breadcrumbs.length ? [{
+        "@type": "BreadcrumbList",
+        "@id": `${url}#breadcrumb`,
+        itemListElement: breadcrumbs.map((crumb, index) => ({
+          "@type": "ListItem",
+          position: index + 1,
+          name: crumb.name,
+          item: `${SITE_URL}${crumb.path}`,
+        })),
       }] : []),
       ...(article ? [
         {

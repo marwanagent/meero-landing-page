@@ -14,13 +14,13 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   if (!article) notFound();
   const url = `${SITE_URL}${ARTICLE_PATH}/${article.slug}`;
   return {
-    title: article.title,
+    title: article.seoTitle,
     description: article.metaDescription,
     alternates: { canonical: url },
     openGraph: {
       images: [socialImage],
       type: "article",
-      title: article.title,
+      title: article.seoTitle,
       description: article.metaDescription,
       url,
       publishedTime: article.publishedISO,
@@ -29,7 +29,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     twitter: {
       images: [socialImage],
       card: "summary_large_image",
-      title: article.title,
+      title: article.seoTitle,
       description: article.metaDescription,
     },
   };

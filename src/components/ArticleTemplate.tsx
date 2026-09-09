@@ -1,4 +1,5 @@
 import { StructuredData } from "@/components/StructuredData";
+import { FirstPartyResult } from "@/components/FirstPartyResult";
 import Link from "next/link";
 import { Container } from "@/components/Container";
 import { Cta } from "@/components/Cta";
@@ -7,8 +8,10 @@ import { Footer } from "@/components/sections/Footer";
 import { articles } from "@/content/articles";
 import type { Article } from "@/content/articles/types";
 import { articleCopy } from "@/content/articles/ui";
+import { articleBreadcrumbs } from "@/content/breadcrumbs";
 import { ARTICLE_PATH, site } from "@/content/site";
 export function ArticleTemplate({ article }: { article: Article }) {
+  const breadcrumbs = articleBreadcrumbs(article);
   const index = articles.findIndex((item) => item.slug === article.slug);
   const siblings = [
     articles[(index + 1) % articles.length],
@@ -20,17 +23,48 @@ export function ArticleTemplate({ article }: { article: Article }) {
       <main className="flex-1 py-14 sm:py-20">
         <Container>
           <article className="article-content mx-auto">
-            <Link href="/" className="text-sm underline underline-offset-4">
-              {site.nav.home}
-            </Link>
+            <nav aria-label={articleCopy.breadcrumbLabel}>
+              <ol className="flex flex-wrap items-center gap-2 text-sm">
+                {breadcrumbs.map((crumb, index) => (
+                  <li key={crumb.path} className="inline-flex items-center gap-2">
+                    {index > 0 && <span aria-hidden="true">&gt;</span>}
+                    {index === breadcrumbs.length - 1 ? (
+                      <span aria-current="page">{crumb.name}</span>
+                    ) : (
+                      <Link href={crumb.path} className="underline underline-offset-4">
+                        {crumb.name}
+                      </Link>
+                    )}
+                  </li>
+                ))}
+              </ol>
+            </nav>
             <h1 className="mt-8">{article.title}</h1>
+            <p className="mt-6 text-xl leading-relaxed">{article.directAnswer}</p>
+            <p className="mt-4 text-sm">
+              {articleCopy.byline}{" "}
+              <Link href="/about" rel="author" className="underline underline-offset-4">
+                {site.brand.author}
+              </Link>
+            </p>
             <div className="mt-8">
               {article.intro.map((text) => (
                 <p key={text}>{text}</p>
               ))}
             </div>
+            <aside className="mt-8 rounded-xl border border-hairline bg-card p-5">
+              <p className="font-semibold">{articleCopy.systemsLabel}</p>
+              <p>{article.systemsContext}</p>
+              <ul className="flex flex-wrap gap-x-6 gap-y-2">
+                {article.commonSystems.map((system) => <li key={system}>{system}</li>)}
+              </ul>
+            </aside>
+            <section className="mt-8 border-l-2 border-accent pl-5">
+              <h2>{articleCopy.scopeLabel}</h2>
+              {article.scope.map((text) => <p key={text}>{text}</p>)}
+            </section>
             <section>
-              <h2>{articleCopy.now}</h2>
+              <h2>{article.nowHeading}</h2>
               <p>{article.nowAnswer}</p>
               <ol className="mt-8 space-y-8">
                 {article.doThisNow.map((item) => (
@@ -42,13 +76,13 @@ export function ArticleTemplate({ article }: { article: Article }) {
               </ol>
             </section>
             <section>
-              <h2>{articleCopy.tasks}</h2>
+              <h2>{article.tasksHeading}</h2>
               <p>{article.tasksAnswer}</p>
-              <dl className="mt-8 space-y-8">
+              <div className="mt-8 space-y-8">
                 {article.agentTasks.map((task) => (
                   <div key={task.name}>
-                    <dt>{task.name}</dt>
-                    <dd>
+                    <h3 id={task.name.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "")}>{task.name}</h3>
+                    <div>
                       <p>
                         <strong>{articleCopy.today}</strong>
                         {task.todayItLooksLike}
@@ -57,13 +91,13 @@ export function ArticleTemplate({ article }: { article: Article }) {
                         <strong>{articleCopy.suits}</strong>
                         {task.whoItSuits}
                       </p>
-                    </dd>
+                    </div>
                   </div>
                 ))}
-              </dl>
+              </div>
             </section>
             <section>
-              <h2>{articleCopy.faq}</h2>
+              <h2>{article.faqHeading}</h2>
               <p>{article.faqAnswer}</p>
               <div className="mt-8 space-y-8">
                 {article.faq.map((item) => (
@@ -74,9 +108,15 @@ export function ArticleTemplate({ article }: { article: Article }) {
                 ))}
               </div>
             </section>
+            {article.outreachEvidence && (
+              <aside className="mt-12">
+                <p>{article.evidenceContext}</p>
+                <FirstPartyResult />
+              </aside>
+            )}
             <section className="mt-12 border-t border-hairline pt-2">
               <h2>{articleCopy.ctaHeading}</h2>
-              <p>{articleCopy.ctaBody}</p>
+              <p>{article.ctaBody}</p>
               <Cta className="mt-6" location={`article-${article.slug}`} />
             </section>
             <nav
@@ -101,7 +141,7 @@ export function ArticleTemplate({ article }: { article: Article }) {
         </Container>
       </main>
       <Footer />
-      <StructuredData page={article} />
+      <StructuredData page={article} breadcrumbs={breadcrumbs} />
     </>
   );
 }

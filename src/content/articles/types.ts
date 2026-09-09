@@ -7,11 +7,22 @@ export type AgentTask = {
 export type Article = {
   slug: string;
   title: string;
+  seoTitle: string;
+  nowHeading: string;
+  tasksHeading: string;
+  faqHeading: string;
   metaDescription: string;
   icp: string;
   publishedISO: string;
   updatedISO: string;
   intro: string[];
+  directAnswer: string;
+  commonSystems: string[];
+  systemsContext: string;
+  scope: string[];
+  ctaBody: string;
+  outreachEvidence?: true;
+  evidenceContext?: string;
   nowAnswer: string;
   tasksAnswer: string;
   faqAnswer: string;

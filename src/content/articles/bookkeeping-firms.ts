@@ -3,17 +3,21 @@ import type { Article } from "./types";
 export const article: Article = {
   "slug": "bookkeeping-firms",
   "title": "How bookkeeping firms can stop chasing month-end documents",
+  "tasksHeading": "What an AI agent can automate for bookkeeping firms",
+  "seoTitle": "Automating Month End Document Chasing | MEERO",
+  "faqHeading": "Bookkeeping firms automation: common questions",
+  "nowHeading": "How to fix bookkeeping month-end document collection without hiring anyone",
   "metaDescription": "Bookkeeping firms can organize missing receipts, statement requests, and close exceptions by entity so document gaps stay visible through month-end.",
   "icp": "Bookkeeping firms",
   "publishedISO": "2026-09-08",
   "updatedISO": "2026-09-09",
   "intro": [
-    "This guide is for bookkeeping firm owners and close leads who spend month-end searching for statements and receipts across client folders. The problem is rarely just an unanswered email: a document may cover the wrong period, belong to another entity, or fail to explain the transaction that prompted the request. A useful collection process tracks what is needed for reconciliation and why.",
-    "Build the workflow around the per-entity close checklist, with source documents linked to specific gaps. An agent can compare expected documents with received files and organize unresolved questions for the bookkeeper. Account classification, reconciliation approval, and decisions about whether the books are ready stay with the person responsible for the close."
+    "Month-end document chasing becomes manageable when each request names the entity, account, and period it serves. The problem is rarely just an unanswered email: a document may cover the wrong period, belong to another entity, or fail to explain the transaction that prompted the request. A useful collection process tracks what is needed for reconciliation and why.",
+    "Build the workflow around the per-entity close checklist, with source documents linked to specific gaps. An agent can compare expected documents with received files and organize unresolved questions for the bookkeeper."
   ],
   "nowAnswer": "Use a per-entity document register to name the missing period, account, and source document before contacting a client. Pair it with a close checklist that distinguishes received files from reviewed evidence.",
-  "tasksAnswer": "A custom agent can prepare targeted document requests, assemble uncategorized transaction questions, and surface close or AR aging exceptions. The bookkeeper still evaluates the evidence and approves accounting treatment.",
-  "faqAnswer": "The main boundaries are document completeness, transaction classification, and close approval. These answers explain how to organize the supporting evidence without treating file collection as finished bookkeeping.",
+  "tasksAnswer": "A custom agent can prepare targeted document requests, assemble uncategorized transaction questions, and surface close or AR aging exceptions.",
+  "faqAnswer": "Use these answers to distinguish a document gap from a transaction question or receivables exception.",
   "doThisNow": [
     {
       "heading": "Replace broad document requests with a gap register",
@@ -21,15 +25,11 @@ export const article: Article = {
     },
     {
       "heading": "Create a client question list from unresolved transactions",
-      "body": "Review uncategorized transactions and group questions by the information required to resolve them. Ask for the business purpose or source document associated with a recognizable transaction, rather than asking the client to choose an accounting category. Include enough context for identification while keeping sensitive account information in the approved portal. Record the response beside the question and link the receipt if one arrives. Leave the chart of accounts decision to the bookkeeper so a casual client explanation does not become an unreviewed posting instruction."
+      "body": "Review uncategorized transactions and group questions by the information required to resolve them. Ask for the business purpose or source document associated with a recognizable transaction, rather than asking the client to choose an accounting category. Include enough context for identification while keeping sensitive account information in the approved portal. Record the response beside the question and link the receipt if one arrives."
     },
     {
-      "heading": "Define evidence for each close checklist item",
-      "body": "Take a recent month-end close and inspect what supported each completed step. Update the per-entity checklist so bank reconciliation, transaction review, and final approval have their own evidence and responsible person. Mark steps blocked by a missing source document instead of leaving them silently incomplete. A received bank statement should unlock review, not automatically mark reconciliation as done. Use the next close meeting to resolve blocked items from this view, with the underlying documents accessible directly from the checklist."
-    },
-    {
-      "heading": "Separate receivables questions from document collection",
-      "body": "Create a saved AR aging view and write down the exceptions that deserve investigation, such as an unapplied receipt or a disputed balance. Assign those items to the person who can inspect the supporting records. Do not mix them into the general request for bank statements because the client may need a different colleague to answer. Preserve the reason an item remains open and the last confirmed action. This creates a useful discussion list without assuming an old balance is necessarily collectible or even correct."
+      "heading": "Review close evidence and receivables exceptions",
+      "body": "Take a recent month-end close and inspect what supported each completed step. Update the per-entity checklist so bank reconciliation, transaction review, and final approval have their own evidence and responsible person. Mark steps blocked by a missing source document instead of leaving them silently incomplete. Use the next close meeting to resolve blocked items from this view, with the underlying documents accessible directly from the checklist. Create a saved AR aging view and write down the exceptions that deserve investigation, such as an unapplied receipt or a disputed balance. Assign those items to the person who can inspect the supporting records. Do not mix them into the general request for bank statements because the client may need a different colleague to answer. Preserve the reason an item remains open and the last confirmed action. This creates a useful discussion list without assuming an old balance is necessarily collectible or even correct."
     }
   ],
   "agentTasks": [
@@ -46,7 +46,7 @@ export const article: Article = {
     {
       "name": "Maintain the per-entity close checklist",
       "todayItLooksLike": "Staff inspect multiple entities to see which reconciliations are complete and which depend on missing evidence. A client-level status can hide an unfinished entity behind another entity’s completed close.",
-      "whoItSuits": "An agent can update administrative readiness from document and review records, then surface blocked steps to the assigned bookkeeper. Completion of a reconciliation or the month-end close requires the recorded reviewer approval. A file arriving in the portal should only update the corresponding document status."
+      "whoItSuits": "An agent can update administrative readiness from document and review records, then surface blocked steps to the assigned bookkeeper."
     },
     {
       "name": "Surface AR aging exceptions for investigation",
@@ -63,19 +63,36 @@ export const article: Article = {
   "faq": [
     {
       "q": "Does receiving a bank statement complete the reconciliation step?",
-      "a": "No. Receipt confirms that a document is available; reconciliation requires the bookkeeper’s work and review. Record document availability separately from reconciliation status. The close checklist should identify the reviewer and supporting evidence before that accounting step is marked complete, even when the statement arrived through an automated collection process."
+      "a": "Receipt confirms that a document is available; reconciliation requires the bookkeeper’s work and review."
     },
     {
       "q": "What should clients be asked about uncategorized transactions?",
-      "a": "Ask for facts the client can provide, such as the business purpose and the associated receipt. Avoid presenting unexplained account codes as a multiple-choice accounting exercise. Link each answer to its transaction so the bookkeeper can assess it in context and choose the appropriate treatment using the firm’s normal review process."
+      "a": "Ask for facts the client can provide, such as the business purpose and the associated receipt. Link each answer to its transaction so the bookkeeper can assess it in context and choose the appropriate treatment using the firm’s normal review process."
     },
     {
       "q": "How do document requests stay separate for related entities?",
-      "a": "Label every expected document with its entity, account, and period, then check those fields when a file is received. A shared client contact can receive an organized request, but the underlying records should preserve entity boundaries. Ambiguous uploads belong in a review queue until someone confirms where they should be filed."
+      "a": "Label every expected document with its entity, account, and period, then check those fields when a file is received. A shared client contact can receive an organized request, but the underlying records should preserve entity boundaries."
     },
     {
       "q": "Should an AR aging exception trigger a collection email?",
-      "a": "Not automatically. An apparent overdue amount may involve an unapplied payment, disputed invoice, or pending adjustment. Have the bookkeeper investigate the exception and establish the correct balance first. If client contact is appropriate, the authorized person can approve the purpose and wording based on that reviewed record."
+      "a": "An apparent overdue amount may involve an unapplied payment, disputed invoice, or pending adjustment. If client contact is appropriate, the authorized person can approve the purpose and wording based on that reviewed record."
+    },
+    {
+      "q": "Where do uploads with an unclear entity belong?",
+      "a": "Ambiguous uploads belong in a review queue until someone confirms where they should be filed."
     }
-  ]
+  ],
+  "commonSystems": [
+    "QuickBooks Online",
+    "Xero",
+    "Dext",
+    "Keeper"
+  ],
+  "systemsContext": "Common bookkeeping systems include these names; an agent is designed around your existing collection setup after checking the permissions and records available, rather than assuming a ready-made connection.",
+  "directAnswer": "Bookkeeping firms can stop sending broad document reminders by maintaining an entity-specific register of missing statements and receipts. An agent compares uploads against that register, prepares precise requests, and attaches client answers to unresolved transactions.",
+  "scope": [
+    "The bookkeeper decides account classification and accounting treatment, reviews reconciliation evidence, and authorizes the close; receiving a file changes document availability alone.",
+    "Receivables exceptions require investigation of the correct balance before an authorized person approves collection contact, and an agent cannot decide a write-off."
+  ],
+  "ctaBody": "Choose a close held up by missing statements or unexplained purchases. Bring the document checklist so we can find where collection ends and bookkeeper review begins."
 };

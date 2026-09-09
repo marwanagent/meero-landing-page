@@ -37,6 +37,12 @@ export default function ArticleHub() {
           <p className="mt-6 max-w-2xl text-lg leading-relaxed text-muted">
             {articleCopy.hubDescription}
           </p>
+          <section className="mt-12 max-w-3xl">
+            <h2 className="font-serif text-3xl">{articleCopy.hubSection.heading}</h2>
+            {articleCopy.hubSection.body.map((text, index) => (
+              <p key={index} className="mt-4 leading-relaxed text-muted">{text}</p>
+            ))}
+          </section>
           <ul className="mt-14 grid gap-6 md:grid-cols-2">
             {articles.map((article) => (
               <li key={article.slug}>

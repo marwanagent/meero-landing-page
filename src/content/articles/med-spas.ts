@@ -3,17 +3,21 @@ import type { Article } from "./types";
 export const article: Article = {
   "slug": "med-spas",
   "title": "How med spas can reduce no-shows and rebook treatment packages",
+  "tasksHeading": "What an AI agent can automate for med spas",
+  "seoTitle": "Med Spa No Show and Rebooking Automation | MEERO",
+  "faqHeading": "Med spas automation: common questions",
+  "nowHeading": "How to fix med spa attendance and treatment package rebooking without hiring anyone",
   "metaDescription": "Med spas can track appointment deposits, prepare approved aftercare check-ins, and coordinate package rebooking while providers handle clinical questions.",
   "icp": "Med spas",
   "publishedISO": "2026-09-08",
   "updatedISO": "2026-09-09",
   "intro": [
-    "This guide is for med spa owners and front-desk managers coordinating high-value appointments, treatment packages, and memberships. An appointment may be reserved without its required deposit, while a package holder may leave without an administrative plan for arranging the next session. Those gaps call for different workflows with clear boundaries around the provider’s treatment decisions.",
-    "Begin with the booking policy and the provider-approved instructions associated with the appointment. An agent can check deposit status, prepare confirmations, and help clients arrange an authorized next session. Clinical questions, contraindications, and anything medical must route to a licensed provider, never to an agent."
+    "At a med spa front desk, a reserved appointment, a paid deposit, and permission to rebook are different records. An appointment may be reserved without its required deposit, while a package holder may leave without an administrative plan for arranging the next session.",
+    "Begin with the booking policy and the provider-approved instructions associated with the appointment. An agent can check deposit status, prepare confirmations, and help clients arrange an authorized next session."
   ],
   "nowAnswer": "Reconcile deposit status with upcoming appointments and record whether package clients have an authorized next-session booking step. Use your existing scheduling system and approved aftercare templates to make those administrative gaps visible.",
   "tasksAnswer": "A custom agent can prepare deposit reminders, send approved aftercare check-ins, and coordinate rebooking within provider-authorized instructions. It can also organize membership renewals and consultation-to-booking administration without making treatment recommendations.",
-  "faqAnswer": "Med spa automation should handle booking and account administration while licensed providers handle care. These questions clarify deposits, treatment-series scheduling, aftercare replies, and membership changes.",
+  "faqAnswer": "These questions clarify deposits, treatment-series scheduling, aftercare replies, and membership changes.",
   "doThisNow": [
     {
       "heading": "Distinguish a reservation from a completed deposit requirement",
@@ -21,7 +25,7 @@ export const article: Article = {
     },
     {
       "heading": "Connect aftercare messages to the provider’s approved instructions",
-      "body": "Ask the licensed provider to identify which approved aftercare material belongs to each completed appointment and when administrative check-ins may be sent. Store the approved version in the system staff already use, with a clear route for replies that mention symptoms or ask about care. The front desk should not select instructions by guessing from an abbreviated appointment name. Review a sample message to confirm that it invites the client to contact the clinical team through the appropriate channel without suggesting that an automated reply can assess their condition."
+      "body": "Ask the licensed provider to identify which approved aftercare material belongs to each completed appointment and when administrative check-ins may be sent. Store the approved version in the system staff already use, with a clear route for replies that mention symptoms or ask about care. The front desk should not select instructions by guessing from an abbreviated appointment name."
     },
     {
       "heading": "Record the next booking step before package clients leave",
@@ -29,7 +33,7 @@ export const article: Article = {
     },
     {
       "heading": "Audit membership renewal and pause records",
-      "body": "Open the membership list and compare upcoming renewals with recorded cancellation, pause, or account-change requests. Identify the approved terms the front desk should use when explaining renewal. Separate an administrative benefit question from a question about whether a treatment is appropriate. Create a short review list for accounts with conflicting status, and resolve those before preparing any renewal communication. Clients should receive information that reflects their actual membership record, especially when they have already asked to change or end the arrangement."
+      "body": "Open the membership list and compare upcoming renewals with recorded cancellation, pause, or account-change requests. Identify the approved terms the front desk should use when explaining renewal. Create a short review list for accounts with conflicting status, and resolve those before preparing any renewal communication. Clients should receive information that reflects their actual membership record, especially when they have already asked to change or end the arrangement."
     }
   ],
   "agentTasks": [
@@ -41,17 +45,17 @@ export const article: Article = {
     {
       "name": "Send provider-approved aftercare check-ins",
       "todayItLooksLike": "After a completed visit, staff identify the appropriate approved aftercare message and make sure replies reach someone who can handle them. Administrative outreach can become a clinical conversation as soon as a client describes a concern.",
-      "whoItSuits": "An agent can deliver the assigned material and route responses to the licensed provider whenever they involve symptoms, contraindications, or other medical questions. It must not evaluate a reaction, reassure a client about symptoms, or generate treatment advice. The provider defines the clinical response pathway, including urgent concerns."
+      "whoItSuits": "An agent can deliver the assigned aftercare material. The provider defines the clinical response pathway, including urgent concerns."
     },
     {
       "name": "Arrange the next session in an authorized series",
-      "todayItLooksLike": "The front desk looks through package balances and appointment notes to find clients who can be contacted about another session. A balance alone does not show whether the provider wants a review first.",
-      "whoItSuits": "An agent can offer booking assistance when the record contains provider-approved scheduling instructions and no unresolved hold. Med spas with structured checkout handoffs can use this to keep a series administratively organized. Any request to change timing for clinical reasons returns to the provider before options are offered."
+      "todayItLooksLike": "The front desk looks through package balances and appointment notes to find clients who can be contacted about another session.",
+      "whoItSuits": "An agent can offer booking assistance when the record contains provider-approved scheduling instructions and no unresolved hold. Med spas with structured checkout handoffs can use this to keep a series administratively organized."
     },
     {
       "name": "Prepare membership renewal communication",
       "todayItLooksLike": "Staff check whether an account is active, paused, or awaiting a requested change before explaining renewal terms. Membership notes and billing records can disagree.",
-      "whoItSuits": "An agent can prepare a renewal message from the approved terms after reconciling the administrative status. Conflicting records should create a front-desk task. It should not interpret silence as permission for a new commitment or override a cancellation request because an older account field still says active."
+      "whoItSuits": "An agent can prepare a renewal message from the approved terms after reconciling the administrative status. It should not interpret silence as permission for a new commitment or override a cancellation request because an older account field still says active."
     },
     {
       "name": "Support booking after a consultation",
@@ -63,19 +67,35 @@ export const article: Article = {
   "faq": [
     {
       "q": "Can an automated aftercare reply tell a client that a reaction is normal?",
-      "a": "No. A statement about a reaction is clinical guidance and must come from a licensed provider. The agent should route the client’s message through the provider-defined response process, preserving the description rather than interpreting it. Approved administrative acknowledgment can explain how the clinical team will receive the concern without offering reassurance or a diagnosis."
+      "a": "A licensed provider assesses reactions; the agent forwards the unchanged description through the clinical response pathway."
     },
     {
       "q": "Can unused package sessions determine the next treatment date?",
-      "a": "No. Package balance is an account fact, while timing depends on the provider’s instructions. The front desk can offer scheduling help only within the authorized booking parameters. If the client asks to change the interval or reports something that could affect care, pause rebooking and route the question to the licensed provider."
+      "a": "Unused sessions do not authorize treatment timing; a changed interval or new care concern pauses scheduling for the licensed provider."
     },
     {
       "q": "Should a missed deposit automatically cancel a high-value appointment?",
-      "a": "Apply the med spa’s approved booking policy through its authorized staff and systems. Before taking action, reconcile recent payments, recorded waivers, and any dispute. An agent can identify an incomplete requirement and prepare a reminder, but unclear payment status should not become an automatic cancellation that the front desk then has to unwind."
+      "a": "Apply the med spa’s approved booking policy through its authorized staff and systems. Before taking action, reconcile recent payments, recorded waivers, and any dispute."
     },
     {
       "q": "Can a consultation follow-up recommend a different treatment package?",
-      "a": "Treatment recommendations belong to the licensed provider. An administrative follow-up can help the client book an already authorized next step or request another clinical conversation. It should not select a package, suggest a touch-up, or change the treatment plan to encourage a booking. Record a client’s choice to wait so outreach respects that preference."
+      "a": "A consultation follow-up can arrange an authorized appointment or another provider conversation, while treatment selection stays with the licensed provider and a client’s decision to wait is recorded."
+    },
+    {
+      "q": "What happens when deposit status is unclear?",
+      "a": "An agent can identify an incomplete requirement and prepare a reminder, but unclear payment status should not become an automatic cancellation that the front desk then has to unwind."
     }
-  ]
+  ],
+  "commonSystems": [
+    "Boulevard",
+    "Zenoti",
+    "Mindbody"
+  ],
+  "systemsContext": "These platforms are common in med spa operations; the starting point for a bespoke agent is the scheduler and account process you already have, subject to checking how that setup permits access.",
+  "directAnswer": "Med spas can organize attendance and package rebooking by reconciling appointment deposits and recording the provider-authorized next booking step. An agent prepares confirmations, delivers assigned aftercare material, and arranges appointments from those records.",
+  "scope": [
+    "All medical questions, including symptoms, contraindications, expected results, suitability, touch-ups, and treatment choices, go to a licensed provider through the provider-defined pathway for routine and urgent concerns; the agent never assesses reactions, reassures about symptoms, diagnoses, or recommends care.",
+    "Only provider-authorized booking parameters permit another treatment appointment, regardless of unused package balance; clinical changes to timing or new care concerns pause rebooking for provider review."
+  ],
+  "ctaBody": "Pick a deposit follow-up or package booking handoff that keeps returning to the front desk. We can work through its administrative steps and the point where a licensed provider must take over."
 };

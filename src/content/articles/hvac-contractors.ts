@@ -3,13 +3,17 @@ import type { Article } from "./types";
 export const article: Article = {
   "slug": "hvac-contractors",
   "title": "How HVAC contractors can follow up on quotes and renew maintenance agreements",
+  "tasksHeading": "What an AI agent can automate for HVAC contractors",
+  "seoTitle": "HVAC Quote Follow Up and Renewal Automation | MEERO",
+  "faqHeading": "HVAC contractors automation: common questions",
+  "nowHeading": "How to fix HVAC quote follow-up and maintenance renewals without hiring anyone",
   "metaDescription": "HVAC contractors can track post-visit quotes, renew service agreements, and coordinate parts and callbacks using current job-ticket details.",
   "icp": "HVAC contractors",
   "publishedISO": "2026-09-08",
   "updatedISO": "2026-09-09",
   "intro": [
-    "This guide is for HVAC contractor owners and office teams managing the work left after a technician leaves a property. A quote may need customer approval, a repair may depend on a part, and a service agreement may be approaching renewal. Putting all of that into a generic reminder list loses the equipment and job context that determines the next useful action.",
-    "Organize the office workflow around the job ticket and its actual unresolved condition. An agent can use approved quote status, dispatch details, and service agreement dates to prepare specific communication. Technicians and office leads keep control of diagnosis, repair recommendations, warranty determinations, and commitments about when work can happen."
+    "After a technician leaves, the HVAC office still has quotes, parts questions, and maintenance agreements to move forward. A quote may need customer approval, a repair may depend on a part, and a service agreement may be approaching renewal. Putting all of that into a generic reminder list loses the equipment and job context that determines the next useful action.",
+    "Organize the office workflow around the job ticket and its actual unresolved condition. An agent can use approved quote status, dispatch details, and service agreement dates to prepare specific communication."
   ],
   "nowAnswer": "Connect each open quote to its job ticket, separate parts delays from customer decisions, and review upcoming service agreement renewals. Those changes can be made in your current dispatch software or office worksheet.",
   "tasksAnswer": "A custom agent can track quotes after technician visits, prepare seasonal tune-up renewal messages, and reconcile dispatch confirmations. It can also surface parts dependencies and callbacks for the appropriate office or technical review.",
@@ -17,7 +21,7 @@ export const article: Article = {
   "doThisNow": [
     {
       "heading": "Review quotes against the technician’s completed visit",
-      "body": "Choose the open quote view in your existing job system and verify that each entry points to the completed job ticket. Record the approved quote version, customer decision, and any unresolved technical question. Separate an estimate awaiting office completion from a quote actually sent to the customer. If equipment age or condition matters to the conversation, preserve the technician’s recorded findings rather than adding an office interpretation. Close obsolete quotes when a replacement version is approved so the customer is not asked to accept the wrong work."
+      "body": "Choose the open quote view in your existing job system and verify that each entry points to the completed job ticket. Record the approved quote version, customer decision, and any unresolved technical question. Separate an estimate awaiting office completion from a quote actually sent to the customer. Close obsolete quotes when a replacement version is approved so the customer is not asked to accept the wrong work."
     },
     {
       "heading": "Build a renewal list from actual service agreement terms",
@@ -29,7 +33,11 @@ export const article: Article = {
     },
     {
       "heading": "Give callbacks their own review queue",
-      "body": "Label a reported problem after a visit as a callback and connect it to the original job ticket. Capture the customer’s description without converting it into a diagnosis. Define the office’s escalation route for urgent or unclear reports using the technical lead’s instructions. Keep callbacks out of ordinary quote follow-up so an unhappy customer does not receive a sales reminder while waiting for help. Review the queue with the dispatch lead and assign a named person to decide the next technical or scheduling action."
+      "body": "Label a reported problem after a visit as a callback and connect it to the original job ticket. Define the office’s escalation route for urgent or unclear reports using the technical lead’s instructions. Keep callbacks out of ordinary quote follow-up so an unhappy customer does not receive a sales reminder while waiting for help."
+    },
+    {
+      "heading": "Assign callback review ownership",
+      "body": "Review the queue with the dispatch lead and assign a named person to decide the next technical or scheduling action."
     }
   ],
   "agentTasks": [
@@ -41,22 +49,22 @@ export const article: Article = {
     {
       "name": "Prepare seasonal tune-up and agreement renewal outreach",
       "todayItLooksLike": "Someone sorts service agreement dates and tries to distinguish customers due for included maintenance from customers whose coverage is ending. Replaced equipment and changed contact preferences complicate the list.",
-      "whoItSuits": "An agent can prepare separate messages for an available seasonal tune-up and a renewal offer using approved agreement records. The office reviews uncertain coverage or missing equipment details. Renewal language should describe the actual agreement instead of implying that every customer has the same included services."
+      "whoItSuits": "An agent can prepare separate messages for an available seasonal tune-up and a renewal offer using approved agreement records."
     },
     {
       "name": "Reconcile dispatch confirmations with job readiness",
       "todayItLooksLike": "Dispatch sends appointment details while checking technician availability, access instructions, and whether the work can proceed. A parts delay or a changed assignment may arrive after a confirmation was drafted.",
-      "whoItSuits": "An agent can prepare confirmations from the current dispatch board and hold messages when required readiness fields are unresolved. This helps offices where scheduling changes throughout the day. The dispatch lead decides how to rearrange jobs and approves promises about arrival windows."
+      "whoItSuits": "An agent can prepare confirmations from the current dispatch board and hold messages when required readiness fields are unresolved. This helps offices where scheduling changes throughout the day."
     },
     {
       "name": "Track warranty and parts dependencies",
       "todayItLooksLike": "The office checks supplier updates and technician requests to establish which part is needed and whether warranty review is complete. Customers ask for progress while the job remains unscheduled.",
-      "whoItSuits": "An agent can assemble the latest recorded supplier status and identify which dependency prevents the next step. It can draft a factual update without promising an install date or warranty coverage. A technician or authorized office reviewer must resolve compatibility, coverage, and any changed work requirement."
+      "whoItSuits": "An agent can assemble the latest recorded supplier status and identify which dependency prevents the next step. A technician or authorized office reviewer must resolve compatibility, coverage, and any changed work requirement."
     },
     {
       "name": "Route callbacks using the original job context",
       "todayItLooksLike": "A customer reports that the problem has returned, and office staff search for the earlier visit and technician findings. Without that context, the report can be handled as an unrelated new request.",
-      "whoItSuits": "An agent can connect the callback to the prior job ticket and notify the designated technical reviewer with the customer’s original description. Technical urgency and diagnosis remain human responsibilities. Reports matching the contractor’s escalation instructions should interrupt routine communication rather than wait behind ordinary quote messages."
+      "whoItSuits": "An agent can connect the callback to the prior job ticket and notify the designated technical reviewer with the customer’s original description."
     }
   ],
   "claims": [],
@@ -67,7 +75,7 @@ export const article: Article = {
     },
     {
       "q": "How is a service agreement renewal different from a tune-up reminder?",
-      "a": "A renewal concerns the next agreement term; a tune-up reminder may concern work already included in the current term. Check the coverage record before choosing the message. Combining them without that distinction can confuse customers about what they have purchased and what still requires a new agreement."
+      "a": "A renewal concerns the next agreement term; a tune-up reminder may concern work already included in the current term."
     },
     {
       "q": "Can a parts update promise that a repair is covered by warranty?",
@@ -75,7 +83,21 @@ export const article: Article = {
     },
     {
       "q": "Should a callback receive the normal quote reminder?",
-      "a": "Pause the quote reminder while the callback is being assessed. The office should first connect the reported issue with the original visit and assign the appropriate reviewer. Once the contractor has established the next action, communication can reflect that decision instead of asking the customer to approve unrelated work during an unresolved service problem."
+      "a": "Hold the sales reminder and connect the callback to its original visit for technical review."
     }
-  ]
+  ],
+  "commonSystems": [
+    "ServiceTitan",
+    "Housecall Pro",
+    "Jobber"
+  ],
+  "systemsContext": "HVAC offices commonly use this dispatch and service software; your own working setup determines the custom agent’s design, and each proposed action needs an access check before it is built.",
+  "directAnswer": "HVAC contractors can organize quote follow-up around the current job ticket and the latest approved repair estimate. An agent prepares customer messages from quote status and separates maintenance already included in an agreement from a renewal offer.",
+  "scope": [
+    "Technicians retain diagnosis, urgency assessment, repair recommendations, and parts compatibility decisions; authorized office or technical reviewers determine warranty coverage, while dispatch approves job changes and arrival commitments.",
+    "Customer callbacks interrupt sales reminders and follow the technical lead’s escalation instructions until a reviewer establishes the next action."
+  ],
+  "ctaBody": "Bring an open repair quote and a maintenance agreement your office is following up on. We can map the job details each message needs and the conditions that should stop it.",
+  "outreachEvidence": true,
+  "evidenceContext": "Quote follow-up and agreement renewal both involve customer outreach. The example below comes from Marwan’s prospecting at Treehouse Music, not HVAC work or a contractor’s results."
 };
