@@ -15,12 +15,12 @@
 
 export const site = {
   brand: {
-    wordmark: "MEEROO",
-    legalName: "MEEROO",
+    wordmark: "MEERO",
+    legalName: "MEERO",
   },
 
   meta: {
-    title: "MEEROO \u00b7 A virtual assistant built for your business alone",
+    title: "MEERO \u00b7 A virtual assistant built for your business alone",
     description:
       "I find what is capping your time and your revenue, then build you a virtual assistant that takes that work over for good. One call, and you leave with clear steps either way.",
   },
@@ -87,7 +87,7 @@ export const site = {
       ],
     },
     after: {
-      label: "Your week with MEEROO",
+      label: "Your week with MEERO",
       alt: "The same week with those repeating blocks handled for you and crossed out, and the hours they took given back to vision, growth, family, and time off.",
       handled: ["Outreach", "Inbox", "Follow-ups", "Invoicing", "Admin"],
       freed: ["Vision", "Growth", "Family", "Off"],
