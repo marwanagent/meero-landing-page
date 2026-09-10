@@ -15,7 +15,7 @@ export const hero = {
   headlineEmphasis: "your family",
   headlineAfter: "",
   body: [
-    "Almost anything that needs to happen on a regular basis can be handed to an agent. I look at how your business actually runs, find what is eating your time and capping your revenue, and tell you straight whether it can be automated.",
+    "Let MEERO handle your to do list. Spend less time in front of a screen and more time doing what you love. I look at how your business actually runs, find what is eating your time and capping your revenue, and tell you straight whether it can be automated.",
     "Runs on its own schedule and pings you when something needs your call.",
   ],
   ctaLead:
@@ -79,13 +79,13 @@ export const howItWorks = {
 
 export const proof = {
   resultLabel: "Marwan’s own business: Treehouse Music",
-  heading: "Agents I've built",
+  heading: "My Own Agent",
   // Two distinct proof types, deliberately labelled and separated: Marwan's own
   // business results, then a client he built for. Merging them makes it unclear
   // whose numbers are whose.
   lead: "Prospect finder and personalized email agent. Took me from basically zero to 15 booked calls a month.",
   supporting:
-    "The emails are so personalized, I got an 18.6% reply rate.",
+    "The emails are so personalized, they get an 18.6% reply rate, roughly 6x the national average.",
   supportingDisclaimer:
     "These are the numbers I got for my own business. A specific reply rate is not guaranteed for yours.",
   takenOffIntro: "Work it already handles for me, every week, without me:",
@@ -101,14 +101,9 @@ export const proof = {
   },
 } as const;
 
-export const control = {
-  heading: "You stay in charge, and it stays simple",
-  body: "Approve, pause, or change anything from one screen on your phone or computer. If you can send a text, you can run this. And when you want it to work differently, you tell me and I handle it.",
-} as const;
-
 export const scarcity = {
-  heading: "Start with one call",
-  body: "I make each one from scratch myself, so I only take on a few clients at a time. If your week is full and your revenue is stuck, start with one call. You leave with clarity either way.",
+  heading: "Start with a call",
+  body: "I make each one from scratch, so I only take on a few clients at a time. If your week is full and your revenue is stuck, let's talk.",
 } as const;
 
 export const faq = {
