@@ -21,14 +21,20 @@ export default function Page() {
         <Container>
           <p className="mb-6 max-w-3xl rounded-xl border border-ink bg-card p-5 font-semibold">{page.notice}</p>
           <h1 className="font-serif text-5xl">{page.heading}</h1>
-          {page.body.map((paragraph) => (
-            <p key={paragraph} className="mt-6 max-w-3xl leading-relaxed">{paragraph}</p>
+          {page.sections.map((section) => (
+            <section key={section.heading} className="mt-10 max-w-3xl">
+              <h2 className="font-serif text-3xl">{section.heading}</h2>
+              {section.body.map((paragraph) => (
+                <p key={paragraph} className="mt-6 leading-relaxed">{paragraph}</p>
+              ))}
+            </section>
           ))}
           <ul className="mt-6 space-y-2">
             {page.sources.map((source) => (
               <li key={source.url}><a href={source.url} className="underline underline-offset-4">{source.label}</a></li>
             ))}
           </ul>
+          <p className="mt-8 max-w-3xl leading-relaxed">{page.contact}</p>
           <address className="mt-8 not-italic">{POSTAL_ADDRESS}</address>
         </Container>
       </main>

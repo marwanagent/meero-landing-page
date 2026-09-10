@@ -7,26 +7,37 @@ export const pages = {
     heading: site.brand.author,
     metaDescription: "Marwan Nassar operates Treehouse Music and builds custom agents himself, starting with the outreach work in his own business.",
     body: [
-      "I’m Marwan Nassar. I operate Treehouse Music, and I built an outreach agent for that business myself. MEERO comes from using the thing I build in a business I actually run.",
-      "The prospect finder and personalized email agent on the homepage is my own working example. Its results came from my business. That experience gives me something concrete to show and discuss, without pretending it predicts what another owner will get.",
-      "MEERO is early. I have one external paying client. I want that distinction to be clear when you read my own results alongside the client quote: they describe different experiences, and neither stands in for a long client roster.",
-      "I build each agent from scratch myself, which is why I take few clients. The starting point is the work in front of you: what keeps repeating, what information it needs, and where your decision belongs. Running my own agent first is how I approach that conversation as an operator."
+      "I'm Marwan Nassar. I operate Treehouse Music, and I was tired of working in my company instead of on it. So I started building agents that handle all of my repeat work. MEERO comes from using the things I learned in my own business and making it for other owners.",
+      "I started by looking at my endless to-do list and asking myself \"can this be automated?\". Every time, the answer was yes, and that's how I started. The prospect finder and personalized email agent on the homepage is my own working example. It not only gave me my time back, it also allowed me to grow Treehouse Music by doing way more outreach than I could've done on my own, or even with a full-time hire. I realized this was too valuable not to share.",
+      "MEERO is early and in development. I build each agent from scratch myself, so I only take a few clients. Eventually I will have template builds, but if you're coming in now, you can get a fully customized agent built to handle exactly the things you need."
     ],
   },
   privacy: {
     path: "/privacy",
     title: "Privacy | MEERO",
     heading: "Privacy",
-    metaDescription: "A plain-language account of this site’s optional Plausible analytics, Calendly booking calendar, and contact details, pending legal review.",
+    metaDescription: "How MEERO handles client business data, plus website visitor information shared with Plausible and Calendly. Plain-language summary pending legal review.",
     notice: "This is a plain-language summary pending legal review.",
-    body: [
-      "This summary describes the MEERO website operated by Marwan Nassar. The site presents information and offers a Calendly calendar for booking a call. Booking information is entered into Calendly’s service rather than submitted to a form handled by this static website.",
-      "The homepage loads Plausible Analytics when a site analytics domain is configured. Without that configuration, the site does not load the Plausible script. When enabled, Plausible measures page visits using information such as the page address, referring site, browser, device type, and approximate location derived from the network request. Plausible describes its analytics as cookie-free; its data policy explains its handling of IP addresses and browser information.",
-      "When Plausible is available, the site sends a CTA click event with the location of the booking link, such as the header or footer. It also sends a Booking completed event when the embedded Calendly calendar reports a scheduled appointment. That completion event contains no booking form fields: the site’s event handler does not forward your name, email address, or Calendly appointment details to Plausible.",
-      "The homepage loads Calendly’s widget script from assets.calendly.com and initializes an embedded calendar at calendly.com. Loading the page therefore contacts Calendly before you submit a booking. Those requests expose network and browser information to the service. Details you enter in the calendar, including contact information and appointment choices, go to Calendly for scheduling and are available to Marwan as the meeting organizer. Calendly’s privacy notice describes its processing, including cookies and similar technologies.",
-      "The booking links also take you directly to Calendly. If the embedded calendar fails, those links remain available. Choosing one opens Calendly’s service, where its own notices and booking interface apply.",
-      "For questions about this website’s handling of information, write to Marwan Nassar at the postal address below."
+    sections: [
+      {
+        "heading": "Client data",
+        "body": [
+          "MEERO is operated by Marwan Nassar. Client business data is used only to operate that client’s agent. It is not sold or used to build another client’s agent.",
+          "Agents run in EU facilities on infrastructure hosted by Hetzner, a German provider. Hetzner’s data centers hold ISO/IEC 27001:2022 certification and BSI C5 Type 2 attestation. These cover Hetzner’s own facilities and operations, not the configuration of an individual MEERO server.",
+          "Marwan builds and operates each agent himself, so access is limited to him. Client credentials are never shared with other clients, and each agent is given only the access its task requires."
+        ]
+      },
+      {
+        "heading": "Website visitors",
+        "body": [
+          "The homepage loads Plausible Analytics only when a site analytics domain is configured. When enabled, it measures visits using the page address, referring site, browser, device type, and approximate location derived from the network request. Plausible describes its analytics as cookie-free; its data policy explains how it handles IP addresses and browser information.",
+          "When Plausible is available, the site sends CTA click events with the booking link’s location and a Booking completed event when the embedded Calendly calendar reports a scheduled appointment. The completion event contains no booking form fields: the site does not forward your name, email address, or Calendly appointment details to Plausible.",
+          "The homepage loads Calendly’s widget script from assets.calendly.com and embeds a calendar at calendly.com. This contacts Calendly before you book and exposes network and browser information to the service. Contact information and appointment choices entered in the calendar go to Calendly for scheduling and are available to Marwan as the meeting organizer. Booking information is entered into Calendly, not a form handled by this static website.",
+          "Booking links also open Calendly directly and remain available if the embed fails. Calendly’s own privacy notice applies to its service and describes its processing, including cookies and similar technologies."
+        ]
+      }
     ],
+    contact: "For questions about how MEERO handles client or website visitor information, write to Marwan Nassar at the postal address below.",
     sources: [
       { label: "Plausible data policy", url: "https://plausible.io/data-policy" },
       { label: "Calendly privacy notice", url: "https://calendly.com/legal/privacy-notice" }

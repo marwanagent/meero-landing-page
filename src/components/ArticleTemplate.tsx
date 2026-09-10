@@ -1,5 +1,6 @@
 import { StructuredData } from "@/components/StructuredData";
 import { FirstPartyResult } from "@/components/FirstPartyResult";
+import { SourcedClaim } from "@/components/SourcedClaim";
 import Link from "next/link";
 import { Container } from "@/components/Container";
 import { Cta } from "@/components/Cta";
@@ -50,6 +51,9 @@ export function ArticleTemplate({ article }: { article: Article }) {
             <div className="mt-8">
               {article.intro.map((text) => (
                 <p key={text}>{text}</p>
+              ))}
+              {article.claims.map((claim) => (
+                <SourcedClaim key={claim.url + claim.text} claim={claim} />
               ))}
             </div>
             <aside className="mt-8 rounded-xl border border-hairline bg-card p-5">

@@ -83,7 +83,7 @@ export const proof = {
   // Two distinct proof types, deliberately labelled and separated: Marwan's own
   // business results, then a client he built for. Merging them makes it unclear
   // whose numbers are whose.
-  lead: "Prospect finder and personalized email agent. Took me from basically zero to 15 booked calls a month and a 10K close within the first month.",
+  lead: "Prospect finder and personalized email agent. Took me from basically zero to 15 booked calls a month.",
   supporting:
     "The emails are so personalized, I got an 18.6% reply rate.",
   supportingDisclaimer:

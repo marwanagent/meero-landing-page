@@ -54,7 +54,12 @@ export const article: Article = {
       "whoItSuits": "Practices that record document versions and payment status can delegate the administrative comparison. The agent can flag a missing signature or unresolved retainer condition and prepare an approved reminder, while the lawyer determines what those conditions mean for representation. An agent can prepare the opening checklist from the accepted intake record and identify incomplete administrative fields. Lawyer-approved docketing instructions should be transferred exactly as authorized, with discrepancies returned for review rather than interpreted."
     }
   ],
-  "claims": [],
+  "claims": [{
+    "text": "Law firm utilization rates averaged 29 percent in 2016. For lawyers working an eight hour day, that is 2.3 hours of billable time.",
+    "source": "Clio Legal Trends Report",
+    "url": "https://www.legalevolution.org/wp-content/uploads/sites/262/2020/03/2017-Legal-Trends-Report.pdf",
+    "date": "2017-01-01"
+  }],
   "faq": [
     {
       "q": "Can intake software clear a conflict when no matching name appears?",
