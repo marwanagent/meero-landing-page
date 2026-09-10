@@ -11,15 +11,15 @@ export const booking = {
 
 export const hero = {
   eyebrow: `An ${CATEGORY_NOUN} built for your business alone`,
-  headlineBefore: "Run your business in ",
-  headlineEmphasis: "half the time",
+  headlineBefore: "You can have time for both your business and ",
+  headlineEmphasis: "your family",
   headlineAfter: "",
   body: [
-    "I look at how your business actually runs, find what is eating your time and capping your revenue, and tell you straight whether it can be automated.",
-    "It is not a person you have to train, and it is not an app you have to learn. It runs on its own schedule and pings you when something needs your call.",
+    "Almost anything that needs to happen on a regular basis can be handed to an agent. I look at how your business actually runs, find what is eating your time and capping your revenue, and tell you straight whether it can be automated.",
+    "Runs on its own schedule and pings you when something needs your call.",
   ],
   ctaLead:
-    "Want to see how much of your week you can get back? Start with one call.",
+    "Want to see how much of your week you can get back? Start with a call.",
   bullets: [
     "Outbound that goes out whether or not you had time for it that week",
     "Inbound inquiries answered the moment they land",
@@ -68,11 +68,11 @@ export const howItWorks = {
     },
     {
       title: "Build",
-      body: "I build your agent from scratch, custom. It handles tasks on a schedule and integrates with any apps you already use. You talk with it through messages or email so you don't have to learn how to use any new apps or tools.",
+      body: "I build your agent from scratch. It handles tasks on a schedule and integrates with apps you already use. You just message it so you don't have to learn how to use any new apps or tools.",
     },
     {
       title: "You sit back, I keep it running",
-      body: "You see the work getting done, and don't have to lift a finger. Your emails sent, your client capture and follow-up handled, your invoices paid. And a whole lot more.",
+      body: "You see the work getting done, and don't have to lift a finger. Your emails sent, your client capture and follow-up handled, your invoices paid. Or whatever else you normally do on your computer.",
     },
   ],
 } as const;
@@ -94,7 +94,7 @@ export const proof = {
     "Invoices sent when work is done",
     "An inbox sorted before the day starts",
   ],
-  clientProofLabel: "From a client I built an agent for",
+  clientProofLabel: "Testimonials",
   quote: {
     text: "I used to lose hours every week researching opportunities for my work. Now that time is basically zero, and every week I get a clear list of the highest-leverage moves to make, including ones I never would have found on my own.",
     attribution: "T. Chavez",

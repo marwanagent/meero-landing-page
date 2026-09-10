@@ -8,7 +8,7 @@ export function HowItWorks() {
   return (
     <section className="border-t border-hairline py-20 sm:py-28">
       <Container>
-        <h2 className="font-serif text-[clamp(2rem,3.5vw+0.5rem,3rem)] font-normal leading-[1.06] tracking-[-0.035em] text-ink">
+        <h2 className="font-serif text-[clamp(2.5rem,4.5vw+0.5rem,3.75rem)] font-normal leading-[1.06] tracking-[-0.035em] text-ink">
           {howItWorks.heading}
         </h2>
         <ol role="list" className="mt-12">
