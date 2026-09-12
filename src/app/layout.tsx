@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Instrument_Serif, DM_Sans } from "next/font/google";
 import "./globals.css";
 import { site, SITE_URL, socialImage } from "@/content/site";
+import { Analytics } from "@vercel/analytics/next"
 
 // Display face: editorial serif, set tight (spec section 5).
 const instrumentSerif = Instrument_Serif({
@@ -44,6 +45,7 @@ export default function RootLayout({
     >
       <body className="min-h-full flex flex-col bg-paper text-ink">
         {children}
+        <Analytics />
       </body>
     </html>
   );
