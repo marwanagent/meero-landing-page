@@ -1,0 +1,11 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "meero-dev",
+      "runtimeExecutable": "sh",
+      "runtimeArgs": ["-c", "cd /Users/marwannassar/Documents/MEEROO/MEERO-landing-page && npm run dev"],
+      "port": 3000
+    }
+  ]
+}
