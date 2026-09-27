@@ -31,14 +31,14 @@ export default function ArticleHub() {
       <SiteHeader />
       <main className="flex-1 py-16 sm:py-24">
         <Container>
-          <h1 className="max-w-3xl font-serif text-5xl sm:text-6xl">
+          <h1 className="max-w-3xl font-heading font-bold text-5xl sm:text-6xl">
             {articleCopy.hubTitle}
           </h1>
           <p className="mt-6 max-w-2xl text-lg leading-relaxed text-muted">
             {articleCopy.hubDescription}
           </p>
           <section className="mt-12 max-w-3xl">
-            <h2 className="font-serif text-3xl">{articleCopy.hubSection.heading}</h2>
+            <h2 className="font-heading font-bold text-3xl">{articleCopy.hubSection.heading}</h2>
             {articleCopy.hubSection.body.map((text, index) => (
               <p key={index} className="mt-4 leading-relaxed text-muted">{text}</p>
             ))}
@@ -51,7 +51,7 @@ export default function ArticleHub() {
                   className="block h-full rounded-xl border border-hairline bg-card p-6 hover:border-ink"
                 >
                   <p className="text-sm text-muted">{article.icp}</p>
-                  <h2 className="mt-3 font-serif text-3xl leading-tight">
+                  <h2 className="mt-3 font-heading font-bold text-3xl leading-tight">
                     {article.title}
                   </h2>
                   <p className="mt-4 leading-relaxed text-muted">

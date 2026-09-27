@@ -14,7 +14,7 @@ export function Footer() {
     <footer className="border-t border-hairline py-16">
       <Container>
         <div className="flex flex-col gap-10 md:flex-row md:items-end md:justify-between">
-          <p className="font-serif text-2xl tracking-[-0.03em] text-ink">
+          <p className="font-heading font-bold text-2xl tracking-[-0.03em] text-ink">
             {site.brand.wordmark}
           </p>
           <nav

@@ -23,8 +23,9 @@
   --color-message-in: #ffffff;
   --color-hairline: #e5e5e5; /* thin borders and dividers */
 
-  --font-serif:
-    var(--font-display), ui-serif, Georgia, Cambria, "Times New Roman", serif;
+  --font-heading:
+    var(--font-body), ui-sans-serif, system-ui, -apple-system, "Segoe UI",
+    sans-serif;
   --font-sans:
     var(--font-body), ui-sans-serif, system-ui, -apple-system, "Segoe UI",
     sans-serif;
@@ -38,6 +39,7 @@ body {
   background: var(--color-paper);
   color: var(--color-ink);
   font-family: var(--font-sans);
+  font-weight: 500;
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
 }
@@ -267,13 +269,15 @@ body {
   max-width: 72ch;
 }
 .article-content h1 {
-  font-family: var(--font-serif);
+  font-family: var(--font-heading);
+  font-weight: 700;
   font-size: clamp(2.5rem, 5vw, 4rem);
   line-height: 1.06;
   letter-spacing: -0.03em;
 }
 .article-content h2 {
-  font-family: var(--font-serif);
+  font-family: var(--font-heading);
+  font-weight: 700;
   font-size: 2.2rem;
   line-height: 1.15;
   margin-top: 3.5rem;

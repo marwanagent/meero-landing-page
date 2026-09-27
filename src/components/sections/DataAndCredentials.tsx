@@ -5,7 +5,7 @@ export function DataAndCredentials() {
   return (
     <section className="border-t border-hairline py-20 sm:py-28">
       <Container>
-        <h2 className="font-serif text-[clamp(2rem,3.5vw+0.5rem,3rem)] font-normal leading-[1.06] tracking-[-0.035em] text-ink">
+        <h2 className="font-heading font-bold text-[clamp(2rem,3.5vw+0.5rem,3rem)] leading-[1.06] tracking-[-0.02em] text-ink">
           {dataAndCredentials.heading}
         </h2>
         <p className="mt-5 max-w-[60ch] text-lg leading-relaxed text-muted">

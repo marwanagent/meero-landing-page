@@ -9,7 +9,7 @@ export function SiteHeader() {
       <Container className="flex min-h-16 flex-wrap py-3 items-center justify-between gap-2 sm:gap-4">
         <Link
           href="/"
-          className="font-serif text-xl tracking-[-0.03em] text-ink sm:text-2xl"
+          className="font-heading font-bold text-xl tracking-[-0.03em] text-ink sm:text-2xl"
         >
           {site.brand.wordmark}
         </Link>

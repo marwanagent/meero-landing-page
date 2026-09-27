@@ -5,7 +5,7 @@ export function Stack() {
   return (
     <section className="border-t border-hairline py-16">
       <Container>
-        <h2 className="font-serif text-4xl">{stack.heading}</h2>
+        <h2 className="font-heading font-bold text-4xl">{stack.heading}</h2>
         <p className="mt-4 text-muted">{stack.body}</p>
         <ul className="my-9 flex flex-wrap items-center gap-x-8 gap-y-6">
           {STACK_TOOLS.map((tool) => (

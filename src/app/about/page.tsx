@@ -19,7 +19,7 @@ export default function Page() {
       <SiteHeader />
       <main className="flex-1 py-16 sm:py-24">
         <Container>
-          <h1 className="font-serif text-5xl">{page.heading}</h1>
+          <h1 className="font-heading font-bold text-5xl">{page.heading}</h1>
           {page.body.map((paragraph) => (
             <p key={paragraph} className="mt-6 max-w-3xl leading-relaxed">{paragraph}</p>
           ))}

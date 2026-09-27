@@ -19,10 +19,10 @@ export default function Page() {
       <SiteHeader />
       <main className="flex-1 py-16 sm:py-24">
         <Container>
-          <h1 className="font-serif text-5xl">{page.heading}</h1>
+          <h1 className="font-heading font-bold text-5xl">{page.heading}</h1>
           {page.sections.map((section) => (
             <section key={section.heading} className="mt-10 max-w-3xl">
-              <h2 className="font-serif text-3xl">{section.heading}</h2>
+              <h2 className="font-heading font-bold text-3xl">{section.heading}</h2>
               {section.body.map((paragraph) => (
                 <p key={paragraph} className="mt-6 leading-relaxed">{paragraph}</p>
               ))}

@@ -1,6 +1,6 @@
 import { proof } from "@/content/home";
 import { Container } from "@/components/Container";
-import { TaskVisual } from "@/components/TaskVisual";
+import { WeekGraphic } from "@/components/WeekGraphic";
 import { Cta } from "@/components/Cta";
 
 /**
@@ -14,8 +14,6 @@ export function Proof() {
   const {
     heading,
     body,
-    takenOffIntro,
-    takenOff,
     clientProofLabel,
     quote,
   } = proof;
@@ -23,27 +21,16 @@ export function Proof() {
   return (
     <section className="border-t border-hairline py-20 sm:py-28">
       <Container>
-        <h2 className="font-serif text-[clamp(2rem,3.5vw+0.5rem,3rem)] font-normal leading-[1.06] tracking-[-0.035em] text-ink">
+        <h2 className="font-heading font-bold text-[clamp(2rem,3.5vw+0.5rem,3rem)] leading-[1.06] tracking-[-0.02em] text-ink">
           {heading}
         </h2>
         <div className="mt-8 rounded-xl border border-hairline bg-card p-6">
           <p className="text-lg">{body}</p>
         </div>
 
-        <p className="mt-10 text-lg font-semibold text-ink">
-          {takenOffIntro}
-        </p>
-        <ul className="mt-5 grid gap-4 md:grid-cols-3">
-          {takenOff.map((item, index) => (
-            <li
-              key={item}
-              className="min-w-0 overflow-hidden rounded-2xl border border-ink/10 bg-card"
-            >
-              <TaskVisual task={index} />
-              <p className="p-6 text-lg font-semibold leading-snug text-ink">{item}</p>
-            </li>
-          ))}
-        </ul>
+        <div className="mt-10 max-w-3xl">
+          <WeekGraphic />
+        </div>
 
         <div className="mt-16 border-t border-hairline pt-10">
           <p className="text-xs font-medium tracking-[0.14em] text-muted">

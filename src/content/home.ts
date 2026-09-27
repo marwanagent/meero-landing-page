@@ -23,6 +23,11 @@ export const hero = {
     "Invoices are created and sent from your calendar events",
     "New prospects are researched and found for you, without hours of digging",
   ],
+  taskCards: [
+    "Personal outreach and follow-up",
+    "Invoices sent from my calendar",
+    "An inbox sorted before the day starts",
+  ],
 } as const;
 
 export const weekGraphic = {
@@ -77,12 +82,6 @@ export const howItWorks = {
 export const proof = {
   heading: "My own business: Treehouse Music",
   body: "My prospect-finding and email agent took me from basically zero to 15 booked calls a month. Its cold emails get an 18.6% reply rate. These are my own business's numbers, and a specific reply rate is not guaranteed for yours.",
-  takenOffIntro: "It also handles, every week, without me:",
-  takenOff: [
-    "Personal outreach and follow-up",
-    "Invoices sent from my calendar",
-    "An inbox sorted before the day starts",
-  ],
   clientProofLabel: "Testimonials",
   quote: {
     text: "I used to lose hours every week researching opportunities for my work. Now that time is basically zero, and every week I get a clear list of the highest-leverage moves to make, including ones I never would have found on my own.",
