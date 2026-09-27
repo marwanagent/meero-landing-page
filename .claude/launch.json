@@ -9,18 +9,6 @@
         "cd /Users/marwannassar/Documents/MEERO/MEERO-landing-page && npm run dev"
       ],
       "port": 3000
-    },
-    {
-      "name": "meero-static",
-      "runtimeExecutable": "python3",
-      "runtimeArgs": [
-        "-m",
-        "http.server",
-        "4391",
-        "--directory",
-        "/private/tmp/claude-501/-Users-marwannassar-Documents-MEERO-MEERO-landing-page/c59a219d-9e46-44fd-b01d-89a0c6be41a6/scratchpad/out"
-      ],
-      "port": 4391
     }
   ]
 }
