@@ -11,7 +11,7 @@ export const booking = {
 
 export const hero = {
   eyebrow: "Custom AI agents for small business owners",
-  headline: "Get your week back with an AI agent built for your business alone.",
+  headline: "More leads and less admin for your business",
   body: [
     "I'm Marwan. I run a music education company, and I built AI agents to handle my own busywork first. Now I build them for other owners, so you spend less time at a screen and more time with your family.",
     "It runs on its own schedule. You choose how it checks in with you: approve each batch before it goes out, get a summary when the work is done, or hear from it only when something needs your decision.",
