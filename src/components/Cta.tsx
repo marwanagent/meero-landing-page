@@ -7,10 +7,12 @@ export function Cta({
   className = "",
   align = "left",
   location,
+  sublabel = CTA_SUBLABEL,
 }: {
   className?: string;
   align?: "left" | "center";
   location: string;
+  sublabel?: string;
 }) {
   const alignment =
     align === "center" ? "items-center text-center" : "items-start";
@@ -24,7 +26,7 @@ export function Cta({
       >
         {CTA_LABEL}
       </a>
-      <p className="text-sm text-muted">{CTA_SUBLABEL}</p>
+      <p className="text-sm text-muted">{sublabel}</p>
     </div>
   );
 }

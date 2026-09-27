@@ -2,7 +2,6 @@ import { proof } from "@/content/home";
 import { Container } from "@/components/Container";
 import { TaskVisual } from "@/components/TaskVisual";
 import { Cta } from "@/components/Cta";
-import { FirstPartyResult } from "@/components/FirstPartyResult";
 
 /**
  * Proof (spec section 4): lead with the verified outcome, then support it.
@@ -14,6 +13,7 @@ import { FirstPartyResult } from "@/components/FirstPartyResult";
 export function Proof() {
   const {
     heading,
+    body,
     takenOffIntro,
     takenOff,
     clientProofLabel,
@@ -26,8 +26,9 @@ export function Proof() {
         <h2 className="font-serif text-[clamp(2rem,3.5vw+0.5rem,3rem)] font-normal leading-[1.06] tracking-[-0.035em] text-ink">
           {heading}
         </h2>
-
-        <FirstPartyResult />
+        <div className="mt-8 rounded-xl border border-hairline bg-card p-6">
+          <p className="text-lg">{body}</p>
+        </div>
 
         <p className="mt-10 text-lg font-semibold text-ink">
           {takenOffIntro}

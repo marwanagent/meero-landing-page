@@ -16,28 +16,23 @@ export const pages = {
     path: "/privacy",
     title: "Privacy | MEERO",
     heading: "Privacy",
-    metaDescription: "How MEERO handles client business data, plus website visitor information shared with Plausible and Calendly. Plain-language summary pending legal review.",
-    notice: "This is a plain-language summary pending legal review.",
+    metaDescription: "How MEERO handles client data and access: a dedicated server per client, encrypted credentials, access you can revoke, and deletion when service ends.",
     sections: [
       {
-        "heading": "Client data",
+        "heading": "How your data and access are handled",
         "body": [
-          "MEERO is operated by Marwan Nassar. Client business data is used only to operate that client’s agent. It is not sold or used to build another client’s agent.",
-          "Agents run in EU facilities on infrastructure hosted by Hetzner, a German provider. Hetzner’s data centers hold ISO/IEC 27001:2022 certification and BSI C5 Type 2 attestation. These cover Hetzner’s own facilities and operations, not the configuration of an individual MEERO server.",
-          "Marwan builds and operates each agent himself, so access is limited to him. Client credentials are never shared with other clients, and each agent is given only the access its task requires."
-        ]
-      },
-      {
-        "heading": "Website visitors",
-        "body": [
-          "The homepage loads Plausible Analytics only when a site analytics domain is configured. When enabled, it measures visits using the page address, referring site, browser, device type, and approximate location derived from the network request. Plausible describes its analytics as cookie-free; its data policy explains how it handles IP addresses and browser information.",
-          "When Plausible is available, the site sends CTA click events with the booking link’s location and a Booking completed event when the embedded Calendly calendar reports a scheduled appointment. The completion event contains no booking form fields: the site does not forward your name, email address, or Calendly appointment details to Plausible.",
-          "The homepage loads Calendly’s widget script from assets.calendly.com and embeds a calendar at calendly.com. This contacts Calendly before you book and exposes network and browser information to the service. Contact information and appointment choices entered in the calendar go to Calendly for scheduling and are available to Marwan as the meeting organizer. Booking information is entered into Calendly, not a form handled by this static website.",
-          "Booking links also open Calendly directly and remain available if the embed fails. Calendly’s own privacy notice applies to its service and describes its processing, including cookies and similar technologies."
+          "You stay in control of access. Your agent connects to your tools through access you grant from your own accounts, and you can revoke it at any time. Where your tools support it, including Google, revoking access cuts off the agent's access to that account.",
+          "Your agent runs on its own server, dedicated to your business alone. No other client's agent runs on it.",
+          "Your credentials are stored encrypted on that server and are loaded only by your agent. They are never stored in code.",
+          "The server is operated by Marwan Nassar. Login is by secure key only; password login is disabled. Security updates are applied automatically.",
+          "Each agent gets only the permissions its job requires, nothing broader.",
+          "Your data is used only to run your agent. Agents use an AI provider to process text, under terms that do not use API data for model training.",
+          "When service ends, access is revoked and your credentials, server, and backups are deleted."
         ]
       }
     ],
-    contact: "For questions about how MEERO handles client or website visitor information, write to Marwan Nassar at the postal address below.",
+    contact: "For questions about how MEERO handles your data, email Marwan Nassar at",
+    contactEmail: "marwan@getmeero.com",
     sources: [
       { label: "Plausible data policy", url: "https://plausible.io/data-policy" },
       { label: "Calendly privacy notice", url: "https://calendly.com/legal/privacy-notice" }

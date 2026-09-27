@@ -1,6 +1,27 @@
 import { faq } from "@/content/home";
 import { Container } from "@/components/Container";
 
+function Answer({ item }: { item: (typeof faq.items)[number] }) {
+  if (!("link" in item)) {
+    return item.a;
+  }
+
+  const parts = item.a.split(item.link.text);
+  if (parts.length !== 2) {
+    throw new Error(`FAQ link text must occur exactly once: ${item.q}`);
+  }
+
+  return (
+    <>
+      {parts[0]}
+      <a href={item.link.href} className="underline underline-offset-4">
+        {item.link.text}
+      </a>
+      {parts[1]}
+    </>
+  );
+}
+
 /**
  * FAQ (spec section 4). Native <details> accordion: accessible and fully
  * functional with JavaScript disabled.
@@ -25,7 +46,7 @@ export function Faq() {
                 </span>
               </summary>
               <p className="mt-3 max-w-[62ch] text-base leading-relaxed text-muted">
-                {item.a}
+                <Answer item={item} />
               </p>
             </details>
           ))}

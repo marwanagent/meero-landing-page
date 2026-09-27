@@ -1,4 +1,4 @@
-import { CATEGORY_NOUN } from "./site";
+import { PRIVACY_PATH } from "./site";
 
 export const booking = {
   failed: "The calendar did not load. You can still book your call here.",
@@ -10,21 +10,18 @@ export const booking = {
 } as const;
 
 export const hero = {
-  eyebrow: `An ${CATEGORY_NOUN} built for your business alone`,
-  headlineBefore: "You can have time for both your business and ",
-  headlineEmphasis: "your family",
-  headlineAfter: "",
+  eyebrow: "Custom AI agents for small business owners",
+  headline: "Get your week back with an AI agent built for your business alone.",
   body: [
-    "Let MEERO handle your to do list. Spend less time in front of a screen and more time doing what you love. I look at how your business actually runs, find what is eating your time and capping your revenue, and tell you straight whether it can be automated.",
-    "Runs on its own schedule and pings you when something needs your call.",
+    "I'm Marwan. I run a music education company, and I built AI agents to handle my own busywork first. Now I build them for other owners, so you spend less time at a screen and more time with your family.",
+    "It runs on its own schedule. You choose how it checks in with you: approve each batch before it goes out, get a summary when the work is done, or hear from it only when something needs your decision.",
   ],
-  ctaLead:
-    "Want to see how much of your week you can get back? Start with a call.",
+  ctaUnder: "Free call. You leave with a clear plan, even if we don't work together.",
   bullets: [
-    "Outbound that goes out whether or not you had time for it that week",
-    "Inbound inquiries answered the moment they land",
-    "Invoices that send themselves",
-    "Ideal clients found without you spending hours on research",
+    "Personalized emails to new prospects go out every week, even when you're busy",
+    "Your inbox is sorted before your day starts, with what needs your reply at the top",
+    "Invoices are created and sent from your calendar events",
+    "New prospects are researched and found for you, without hours of digging",
   ],
 } as const;
 
@@ -63,35 +60,27 @@ export const howItWorks = {
   heading: "How it works",
   steps: [
     {
-      title: "Clarity",
-      body: "One call, we break down your bottlenecks and what things can be automated to save you time",
+      title: "Find the bottlenecks",
+      body: "In one free call, we look at where your week goes and which tasks can be automated.",
     },
     {
-      title: "Build",
-      body: "I build your agent from scratch. It handles tasks on a schedule and integrates with apps you already use. You just message it so you don't have to learn how to use any new apps or tools.",
+      title: "I build your agent",
+      body: "I build it from scratch around the apps you already use, and it works the way you prefer. It can ask for your approval, report back, or run quietly and flag only what needs you.",
     },
     {
-      title: "You sit back, I keep it running",
-      body: "You see the work getting done, and don't have to lift a finger. Your emails sent, your client capture and follow-up handled, your invoices paid. Or whatever else you normally do on your computer.",
+      title: "It runs, I maintain it",
+      body: "Your emails go out, your inbox gets sorted, and your invoices get sent. If something breaks, I fix it.",
     },
   ],
 } as const;
 
 export const proof = {
-  resultLabel: "Marwan’s own business: Treehouse Music",
-  heading: "My Own Agent",
-  // Two distinct proof types, deliberately labelled and separated: Marwan's own
-  // business results, then a client he built for. Merging them makes it unclear
-  // whose numbers are whose.
-  lead: "Prospect finder and personalized email agent. Took me from basically zero to 15 booked calls a month.",
-  supporting:
-    "The emails are so personalized, they get an 18.6% reply rate, roughly 6x the national average.",
-  supportingDisclaimer:
-    "These are the numbers I got for my own business. A specific reply rate is not guaranteed for yours.",
-  takenOffIntro: "Work it already handles for me, every week, without me:",
+  heading: "My own business: Treehouse Music",
+  body: "My prospect-finding and email agent took me from basically zero to 15 booked calls a month. Its cold emails get an 18.6% reply rate. These are my own business's numbers, and a specific reply rate is not guaranteed for yours.",
+  takenOffIntro: "It also handles, every week, without me:",
   takenOff: [
     "Personal outreach and follow-up",
-    "Invoices sent when work is done",
+    "Invoices sent from my calendar",
     "An inbox sorted before the day starts",
   ],
   clientProofLabel: "Testimonials",
@@ -99,6 +88,42 @@ export const proof = {
     text: "I used to lose hours every week researching opportunities for my work. Now that time is basically zero, and every week I get a clear list of the highest-leverage moves to make, including ones I never would have found on my own.",
     attribution: "T. Chavez",
   },
+} as const;
+
+// Shared first-party result card used by the industry articles.
+export const firstPartyResult = {
+  resultLabel: "Marwan’s own business: Treehouse Music",
+  lead: "Prospect finder and personalized email agent. Took me from basically zero to 15 booked calls a month.",
+  supporting: "Its cold emails get an 18.6% reply rate.",
+  supportingDisclaimer:
+    "These are the numbers I got for my own business. A specific reply rate is not guaranteed for yours.",
+} as const;
+
+export const dataAndCredentials = {
+  heading: "Your data and credentials",
+  intro: "The real guarantee is that you can cut off access at any time, from your own accounts, without asking me.",
+  items: [
+    {
+      lead: "Revocable by you.",
+      text: "Your agent only reaches the accounts you connect. You can revoke its access from your own account settings at any time. Where your tools support it, including Google, that cuts it off.",
+    },
+    {
+      lead: "Stored encrypted.",
+      text: "Your credentials are stored encrypted, never as plain text files.",
+    },
+    {
+      lead: "Your own server.",
+      text: "Your agent runs on a server set up for your business alone. No other client's agent or data is on it.",
+    },
+    {
+      lead: "Operated by me.",
+      text: "I build and maintain the server. Login is by secure key only, and I'm the only one with access.",
+    },
+    {
+      lead: "Processed by an AI provider.",
+      text: "The text your agent reads and writes is processed through an AI provider's API, under terms that do not use API data for model training.",
+    },
+  ],
 } as const;
 
 export const scarcity = {
@@ -110,20 +135,29 @@ export const faq = {
   heading: "Questions",
   items: [
     {
-      q: "What kind of work can you take off my plate?",
-      a: "Anything you do on a regular, repeating schedule: contacting people, following up, invoicing, sorting the inbox, research, reporting. If it happens every week and it eats your time, it is worth looking at.",
+      q: "What can you take off my plate?",
+      a: "Anything you do over and over: following up with people, sending invoices, sorting your inbox, research, and reports. If it happens every week and eats your time, it's worth a look.",
     },
     {
       q: "Do I need to be good with technology?",
-      a: "No, you keep the tools you already use and never learn a new program. You run it from one screen, and I handle the building and upkeep.",
+      a: "No. You keep the apps you already use. Your agent reaches you where you already are, and I handle the building and upkeep.",
     },
     {
       q: "What does it cost?",
-      a: "Each agent is different so the number is specific to you. I won't offer to build you an agent if it isn't the best fit. You leave the call with clarity on your bottlenecks regardless.",
+      a: "Every agent is built for one business, so the price is specific to yours. It depends on how many tasks the agent handles, how many apps it connects to, and how much volume it runs. You get a firm quote after our call, covering the build and the monthly upkeep: your server, security updates, and fixes.",
+    },
+    {
+      q: "Is my data safe?",
+      a: "Your agent runs on its own server, used only for your business. Your credentials are stored encrypted, and only I can log in. You can revoke its access to any account at any time from that account's own settings. See the Privacy Policy for details.",
+      link: { text: "Privacy Policy", href: PRIVACY_PATH },
+    },
+    {
+      q: "What happens if I cancel?",
+      a: "I shut your agent down and send you an export of your data if you want one. Then I delete your server and everything on it within 30 days. You can also revoke its access from your accounts the moment you cancel.",
     },
     {
       q: "What if it stops working?",
-      a: "It is watched every day. A step that fails tries again on its own, and if something needs a person, that person is me, not you.",
+      a: "Your agent checks in with an outside monitor on a schedule. If it goes quiet or a step fails, I get an alert and I fix it. You don't have to watch it.",
     },
   ],
 } as const;

@@ -4,7 +4,7 @@ import { SiteHeader } from "@/components/SiteHeader";
 import { Footer } from "@/components/sections/Footer";
 import { StructuredData } from "@/components/StructuredData";
 import { pages } from "@/content/pages";
-import { SITE_URL, POSTAL_ADDRESS } from "@/content/site";
+import { SITE_URL } from "@/content/site";
 
 const page = pages.privacy;
 export const metadata: Metadata = {
@@ -19,7 +19,6 @@ export default function Page() {
       <SiteHeader />
       <main className="flex-1 py-16 sm:py-24">
         <Container>
-          <p className="mb-6 max-w-3xl rounded-xl border border-ink bg-card p-5 font-semibold">{page.notice}</p>
           <h1 className="font-serif text-5xl">{page.heading}</h1>
           {page.sections.map((section) => (
             <section key={section.heading} className="mt-10 max-w-3xl">
@@ -34,8 +33,10 @@ export default function Page() {
               <li key={source.url}><a href={source.url} className="underline underline-offset-4">{source.label}</a></li>
             ))}
           </ul>
-          <p className="mt-8 max-w-3xl leading-relaxed">{page.contact}</p>
-          <address className="mt-8 not-italic">{POSTAL_ADDRESS}</address>
+          <p className="mt-8 max-w-3xl leading-relaxed">
+            {page.contact}{" "}
+            <a href={`mailto:${page.contactEmail}`} className="underline underline-offset-4">{page.contactEmail}</a>.
+          </p>
         </Container>
       </main>
       <Footer />

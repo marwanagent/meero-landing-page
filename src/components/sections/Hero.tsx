@@ -13,7 +13,7 @@ export function Hero() {
           <div className="min-w-0">
             <p className="text-xs font-medium tracking-[0.18em] text-muted">{hero.eyebrow}</p>
             <h1 className="mt-5 max-w-[19ch] font-serif text-[clamp(2.5rem,3.8vw,3.5rem)] font-normal leading-[1.04] tracking-[-0.04em] text-ink">
-              {hero.headlineBefore}<em className="text-message-blue italic">{hero.headlineEmphasis}</em>{hero.headlineAfter}
+              {hero.headline}
             </h1>
             <div className="mt-5 max-w-[58ch] space-y-4 text-base leading-relaxed text-muted">
               <p>{hero.body[0]}</p>
@@ -27,8 +27,7 @@ export function Hero() {
               </ul>
               <p>{hero.body[1]}</p>
             </div>
-            <p className="mt-5 max-w-[48ch] text-base leading-relaxed text-ink">{hero.ctaLead}</p>
-            <Cta className="mt-4" location="hero" />
+            <Cta className="mt-4" location="hero" sublabel={hero.ctaUnder} />
           </div>
           <WeekGraphic />
         </div>

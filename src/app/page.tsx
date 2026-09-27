@@ -1,5 +1,6 @@
 import { StructuredData } from "@/components/StructuredData";
 import { Stack } from "@/components/sections/Stack";
+import { DataAndCredentials } from "@/components/sections/DataAndCredentials";
 import { site, SITE_URL, socialImage } from "@/content/site";
 export const metadata = {
   alternates: { canonical: SITE_URL },
@@ -28,6 +29,7 @@ export default function Home() {
         <HowItWorks />
         <Stack />
         <Proof />
+        <DataAndCredentials />
         <Scarcity />
         <Faq />
       </main>
