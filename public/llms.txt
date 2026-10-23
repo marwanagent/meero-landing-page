@@ -10,5 +10,5 @@
 - [How HVAC contractors use AI agents for quote follow-up and renewals](https://getmeero.com/what-an-agent-can-do/hvac-contractors): HVAC contractors can track post-visit quotes, renew service agreements, and coordinate parts and callbacks using current job-ticket details.
 - [AI agents for commercial cleaning: shift coverage and site quality](https://getmeero.com/what-an-agent-can-do/commercial-cleaning): Commercial cleaning companies can verify shift coverage, organize quality inspections, and track site issues against each contract’s scope of work.
 - [How med spas use AI agents to cut no-shows and rebook treatments](https://getmeero.com/what-an-agent-can-do/med-spas): Med spas can track appointment deposits, prepare approved aftercare check-ins, and coordinate package rebooking while providers handle clinical questions.
-- [About Marwan Nassar](https://getmeero.com/about): Marwan Nassar operates Treehouse Music and builds custom agents himself, starting with the outreach work in his own business.
+- [About Marwan Nassar](https://getmeero.com/about): Marwan Nassar runs his own business and builds custom agents himself, starting with the outreach work in that business.
 - [Privacy](https://getmeero.com/privacy): A plain-language account of this site’s optional Plausible analytics, Calendly booking calendar, and contact details, pending legal review.

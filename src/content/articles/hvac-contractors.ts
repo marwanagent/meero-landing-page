@@ -99,5 +99,5 @@ export const article: Article = {
   ],
   "ctaBody": "Bring an open repair quote and a maintenance agreement your office is following up on. We can map the job details each message needs and the conditions that should stop it.",
   "outreachEvidence": true,
-  "evidenceContext": "Quote follow-up and agreement renewal both involve customer outreach. The example below comes from Marwan’s prospecting at Treehouse Music, not HVAC work or a contractor’s results."
+  "evidenceContext": "Quote follow-up and agreement renewal both involve customer outreach. The example below comes from Marwan’s prospecting for his own business, not HVAC work or a contractor’s results."
 };

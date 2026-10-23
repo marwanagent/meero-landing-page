@@ -5,10 +5,10 @@ export const pages = {
     path: "/about",
     title: `About ${site.brand.author} | MEERO`,
     heading: site.brand.author,
-    metaDescription: "Marwan Nassar operates Treehouse Music and builds custom agents himself, starting with the outreach work in his own business.",
+    metaDescription: "Marwan Nassar runs his own business and builds custom agents himself, starting with the outreach work in that business.",
     body: [
-      "I'm Marwan Nassar. I operate Treehouse Music, and I was tired of working in my company instead of on it. So I started building agents that handle all of my repeat work. MEERO comes from using the things I learned in my own business and making it for other owners.",
-      "I started by looking at my endless to-do list and asking myself \"can this be automated?\". Every time, the answer was yes, and that's how I started. The prospect finder and personalized email agent on the homepage is my own working example. It not only gave me my time back, it also allowed me to grow Treehouse Music by doing way more outreach than I could've done on my own, or even with a full-time hire. I realized this was too valuable not to share.",
+      "I'm Marwan Nassar. I run my own business, and I was tired of working in my company instead of on it. So I started building agents that handle all of my repeat work. MEERO comes from using the things I learned in my own business and making it for other owners.",
+      "I started by looking at my endless to-do list and asking myself \"can this be automated?\". Every time, the answer was yes, and that's how I started. The prospect finder and personalized email agent on the homepage is my own working example. It not only gave me my time back, it also allowed me to grow my own business by doing way more outreach than I could've done on my own, or even with a full-time hire. I realized this was too valuable not to share.",
       "MEERO is early and in development. I build each agent from scratch myself, so I only take a few clients. Eventually I will have template builds, but if you're coming in now, you can get a fully customized agent built to handle exactly the things you need."
     ],
   },

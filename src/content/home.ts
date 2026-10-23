@@ -80,7 +80,7 @@ export const howItWorks = {
 } as const;
 
 export const proof = {
-  heading: "My own business: Treehouse Music",
+  heading: "My own business",
   body: "My prospect-finding and email agent took me from basically zero to 15 booked calls a month. Its cold emails get an 18.6% reply rate. These are my own business's numbers, and a specific reply rate is not guaranteed for yours.",
   clientProofLabel: "Testimonials",
   quote: {
@@ -91,7 +91,7 @@ export const proof = {
 
 // Shared first-party result card used by the industry articles.
 export const firstPartyResult = {
-  resultLabel: "Marwan’s own business: Treehouse Music",
+  resultLabel: "Marwan’s own business",
   lead: "Prospect finder and personalized email agent. Took me from basically zero to 15 booked calls a month.",
   supporting: "Its cold emails get an 18.6% reply rate.",
   supportingDisclaimer:
